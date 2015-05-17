@@ -1,0 +1,29 @@
+#header{
+    position:absolute;
+    top:5px;
+}
+.toolbar.toolbar-addressbar>*:first-child{
+    margin-left:30px;
+}
+.toolbar.toolbar-addressbar>.button-toolbar{
+    -webkit-filter:invert(0.7);
+}
+.toolbar.toolbar-addressbar{
+    background-image:linear-gradient(rgb(240,240,240),rgb(230,230,230));
+}
+.addressfield,.searchfield{
+    box-shadow:rgba(0,0,0,0.1) 0 0 0 1px;
+}
+
+#switch{
+    background-image: linear-gradient(to left,rgb(240,240,240),rgb(230,230,230));
+    border-right:1px solid rgba(0,0,0,0.02);
+}
+#switch button{
+    -webkit-filter:invert(0.7);
+}
+#switch button.active{
+    -webkit-filter:invert(0.4);
+    background-color:rgba(255,255,255,.2) !important;
+    box-shadow:none !important;
+}
