@@ -1,11 +1,11 @@
 # vivaldi
 
-###Features:
+#####Features:
 1. White UI
 2. Move vivaldi icon to address bar
 3. A panel-like tab bar
 
-###Known issues:
+#####Known issues:
 1. Native windows must be enabled
 2. Tabs and panels must be set to left
 3. Panel width is not adjustable
