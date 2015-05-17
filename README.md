@@ -6,7 +6,7 @@
 3. A panel-like tab bar
 
 #####Usage
-Copy all the files to the same directory as browser.html(browser.html)
+Copy all the files to the same directory as browser.html(overwrite browser.html)
 windows: $installdir/Application/1.0.174.8/resources/vivaldi
 
 #####Known issues:
