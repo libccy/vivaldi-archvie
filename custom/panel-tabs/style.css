@@ -1,0 +1,39 @@
+#switch button.tabs {
+	background-image: url(/custom/panel-tabs/panel-tabs-regular.png)
+}
+
+@media (-webkit-min-device-pixel-ratio:2) {
+	#switch button.tabs {
+		background-image: url(/custom/panel-tabs/panel-tabs-regular@2x.png)
+	}
+}
+
+#switch button.tabs.active {
+	background-image: url(/custom/panel-tabs/panel-tabs-active.png)
+}
+#panels-container.custom-tabs .panel{
+    display: none;
+}
+#panels-container{
+    min-width: 240px;
+    max-width: 240px;
+}
+#panels-container.hidden{
+    min-width: 34px;
+    max-width: 34px;
+}
+#tabs-container{
+    min-width: 206px;
+    max-width: 206px;
+    position: absolute;
+    height: calc(100% - 34px);
+    left:34px;
+    top:34px;
+    z-index: 1;
+}
+
+@media (-webkit-min-device-pixel-ratio:2) {
+	#switch button.tabs.active {
+		background-image: url(/custom/panel-tabs/panel-tabs-active@2x.png)
+	}
+}
