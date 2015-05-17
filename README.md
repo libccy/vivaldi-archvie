@@ -5,6 +5,10 @@
 2. Move vivaldi icon to address bar
 3. A panel-like tab bar
 
+#####Usage
+Copy all the files to the same directory as browser.html(browser.html)
+windows: $installdir/Application/1.0.174.8/resources/vivaldi
+
 #####Known issues:
 1. Native windows must be enabled
 2. Tabs and panels must be set to left
