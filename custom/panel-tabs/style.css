@@ -31,6 +31,10 @@
     top:34px;
     z-index: 1;
 }
+#panels .pullie,
+#panels .fullheight{
+	cursor: default
+}
 
 @media (-webkit-min-device-pixel-ratio:2) {
 	#switch button.tabs.active {
