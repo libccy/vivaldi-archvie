@@ -27,32 +27,34 @@
             for(var i=0;i<e.path.length;i++){
                 if(e.path[i].tagName&&e.path[i].tagName.toLowerCase()==='button'){
                     var button=e.path[i];
-                    var tabscontainer=document.querySelector('#tabs-container');
-                    if(tabscontainer){
-                        if(!button.classList.contains('tabs')){
-                            tabscontainer.style.display='none';
-                            tabs.classList.remove('active');
-                            setTimeout(function(){
-                                if(button.classList.contains('active')){
-                                    container.classList.remove('hidden');
-                                    container.classList.remove('custom-tabs');
-                                }
-                                else{
-                                    container.classList.add('custom-tabs');
-                                    container.classList.add('hidden');
-                                }
-                            });
-                        }
-                        else{
-                            button.classList.toggle('active');
-                            if(button.classList.contains('active')){
-                                closeActive();
-                                tabscontainer.style.display='';
-                                container.classList.remove('hidden');
+                    if(!button.classList.contains('preferences')){
+                        var tabscontainer=document.querySelector('#tabs-container');
+                        if(tabscontainer){
+                            if(!button.classList.contains('tabs')){
+                                tabscontainer.style.display='none';
+                                tabs.classList.remove('active');
+                                setTimeout(function(){
+                                    if(button.classList.contains('active')){
+                                        container.classList.remove('hidden');
+                                        container.classList.remove('custom-tabs');
+                                    }
+                                    else{
+                                        container.classList.add('custom-tabs');
+                                        container.classList.add('hidden');
+                                    }
+                                });
                             }
                             else{
-                                tabscontainer.style.display='none';
-                                container.classList.add('hidden');
+                                button.classList.toggle('active');
+                                if(button.classList.contains('active')){
+                                    closeActive();
+                                    tabscontainer.style.display='';
+                                    container.classList.remove('hidden');
+                                }
+                                else{
+                                    tabscontainer.style.display='none';
+                                    container.classList.add('hidden');
+                                }
                             }
                         }
                     }
