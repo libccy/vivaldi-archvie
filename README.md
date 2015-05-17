@@ -9,7 +9,7 @@
 Copy all the files to the same directory as browser.html(overwrite browser.html)<br>
 windows: $installdir/Application/1.0.174.8/resources/vivaldi
 
-To Disable tab panel, delete this line:<script src="custom/panel-tabs/main.js"></script>
+To Disable tab panel, delete this line:&lt;script src="custom/panel-tabs/main.js"&gt;&lt;/script&gt;
 
 #####Known issues:
 1. Native windows must be enabled
