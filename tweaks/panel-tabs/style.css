@@ -1,16 +1,20 @@
 #switch button.tabs {
-	background-image: url(/custom/panel-tabs/panel-tabs-regular.png)
+	background-image: url(/tweaks/panel-tabs/panel-tabs-regular.png)
 }
-
+#switch button.tabs.active {
+	background-image: url(/tweaks/panel-tabs/panel-tabs-active.png)
+}
 @media (-webkit-min-device-pixel-ratio:2) {
 	#switch button.tabs {
-		background-image: url(/custom/panel-tabs/panel-tabs-regular@2x.png)
+		background-image: url(/tweaks/panel-tabs/panel-tabs-regular@2x.png)
+	}
+}
+@media (-webkit-min-device-pixel-ratio:2) {
+	#switch button.tabs.active {
+		background-image: url(/tweaks/panel-tabs/panel-tabs-active@2x.png)
 	}
 }
 
-#switch button.tabs.active {
-	background-image: url(/custom/panel-tabs/panel-tabs-active.png)
-}
 #panels-container.custom-tabs .panel{
     display: none;
 }
@@ -34,10 +38,4 @@
 #panels .pullie,
 #panels .fullheight{
 	cursor: default
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	#switch button.tabs.active {
-		background-image: url(/custom/panel-tabs/panel-tabs-active@2x.png)
-	}
 }

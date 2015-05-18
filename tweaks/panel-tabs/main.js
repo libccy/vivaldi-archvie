@@ -4,7 +4,7 @@
     if(panelswitch){
         var link=document.createElement('link');
         link.rel='stylesheet';
-        link.href='custom/panel-tabs/style.css';
+        link.href='tweaks/panel-tabs/style.css';
         document.head.appendChild(link);
         var tabs=document.createElement('button');
         tabs.title='Tabs';
