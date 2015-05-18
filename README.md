@@ -8,14 +8,10 @@ If you are not sure where to put the code, paste them under this line
 <script src="bundle.js"></script>
 ````
 
-Windows
-````
-$installdir/Application/1.0.174.8/resources/vivaldi
-````
-Mac
-````
-$installdir/Contents/versions/1.0.174.8/Vivaldi Framework/resources/vivaldi
-````
+Windows: $installdir/Application/1.0.174.8/resources/vivaldi
+
+Mac: $installdir/Contents/versions/1.0.174.8/Vivaldi Framework/resources/vivaldi
+
 
 ###White skin
 Modify the color of addressbar and panel.
