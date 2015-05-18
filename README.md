@@ -17,6 +17,7 @@ Enable: add this line to the head of browser.html:<br>
 
 ######Tabs panel
 Turns tab bar into a "panel", which behaves similarly to other panels(only tested on windows).
+
 Enable: add this line to the body of browser.html:<br>
 &lt;script src="custom/panel-tabs/main.js"&gt;&lt;/script&gt;
 
