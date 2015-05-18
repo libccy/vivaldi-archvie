@@ -5,17 +5,17 @@ Copy the tweaks folder to the same directory as browser.html, then modify browse
 Windows: $installdie\Application\1.0.174.8\resources\vivaldi<br>
 Mac: $installdir/Contents/versions/1.0.174.8/Vivaldi Framework/resources/vivaldi
 
-######White skin
+#####White skin
 Enable: add this line to the head of browser.html:<br>
 &lt;link rel="stylesheet" href="custom/white/style.css" /&gt;
 
-######Modify menu position
+#####Modify menu position
 Move the vivaldi menu to the addressbar when native window is enabled(only tested on windows).
 
 Enable: add this line to the head of browser.html:<br>
 &lt;link rel="stylesheet" href="custom/menu/style.css" /&gt;
 
-######Tabs panel
+#####Tabs panel
 Turns tab bar into a "panel", which behaves similarly to other panels(only tested on windows).
 
 Enable: add this line to the body of browser.html:<br>
