@@ -31,6 +31,13 @@ Move the vivaldi menu to the addressbar when native window is enabled(only teste
 ````
 ![](/screenshots/menu.png?raw=true)
 
+###Cycle tabs
+cycle through tabs by right-click+mousewheel
+````html
+<script src="custom/cycle-tabs/main.js"></script>
+````
+![](/screenshots/white.png?raw=true)
+
 ###Tabs panel
 Turns tab bar into a "panel", which behaves similarly to other panels(only tested on windows).
 ````html
