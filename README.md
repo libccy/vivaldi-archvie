@@ -6,20 +6,23 @@ Windows: $installdir\Application\1.0.174.8\resources\vivaldi<br>
 Mac: $installdir/Contents/versions/1.0.174.8/Vivaldi Framework/resources/vivaldi
 
 #####White skin
-Enable: add this line to the head of browser.html:<br>
-&lt;link rel="stylesheet" href="custom/white/style.css" /&gt;
+![](/screenshots/white.png?raw=true)
+
+<pre>&lt;link rel="stylesheet" href="custom/white/style.css" /&gt;</pre>
 
 #####Modify menu position
+![](/screenshots/menu.png?raw=true)
+
 Move the vivaldi menu to the addressbar when native window is enabled(only tested on windows).
 
-Enable: add this line to the head of browser.html:<br>
-&lt;link rel="stylesheet" href="custom/menu/style.css" /&gt;
+<pre>&lt;link rel="stylesheet" href="custom/menu/style.css" /&gt;</pre>
 
 #####Tabs panel
+![](/screenshots/panel-tabs.png?raw=true)
+
 Turns tab bar into a "panel", which behaves similarly to other panels(only tested on windows).
 
-Enable: add this line to the body of browser.html:<br>
-&lt;script src="custom/panel-tabs/main.js"&gt;&lt;/script&gt;
+<pre>&lt;script src="custom/panel-tabs/main.js"&gt;&lt;/script&gt;</pre>
 
 Known issues:
 
@@ -28,3 +31,7 @@ Known issues:
 3. Panel width is not adjustable
 4. Toggling panels with menu or keyboard shortcuts doesn't work
 5. Very likely to be incompatible with future releases
+
+<style>
+image{width:400px}
+</style>
