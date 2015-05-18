@@ -5,7 +5,7 @@ Copy the tweaks folder to the same directory as browser.html, then modify browse
 Windows: $installdie\Application\1.0.174.8\resources\vivaldi<br>
 Mac: $installdir/Contents/versions/1.0.174.8/Vivaldi Framework/resources/vivaldi
 
-#####White skin
+######White skin
 Enable: add this line to the head of browser.html:<br>
 &lt;link rel="stylesheet" href="custom/white/style.css" /&gt;
 
@@ -21,6 +21,7 @@ Enable: add this line to the body of browser.html:<br>
 &lt;script src="custom/panel-tabs/main.js"&gt;&lt;/script&gt;
 
 Known issues:
+
 1. The previous tweak(modify menu position) must be enabled
 2. Tabs and panels must be set to left
 3. Panel width is not adjustable
