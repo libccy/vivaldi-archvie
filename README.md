@@ -6,23 +6,18 @@ Windows: $installdir\Application\1.0.174.8\resources\vivaldi<br>
 Mac: $installdir/Contents/versions/1.0.174.8/Vivaldi Framework/resources/vivaldi
 
 #####White skin
+<pre>&lt;link rel="stylesheet" href="custom/white/style.css" /&gt;</pre>
 ![](/screenshots/white.png?raw=true)
 
-<pre>&lt;link rel="stylesheet" href="custom/white/style.css" /&gt;</pre>
-
 #####Modify menu position
+Move the vivaldi menu to the addressbar when native window is enabled(only tested on windows).
+<pre>&lt;link rel="stylesheet" href="custom/menu/style.css" /&gt;</pre>
 ![](/screenshots/menu.png?raw=true)
 
-Move the vivaldi menu to the addressbar when native window is enabled(only tested on windows).
-
-<pre>&lt;link rel="stylesheet" href="custom/menu/style.css" /&gt;</pre>
-
 #####Tabs panel
-![](/screenshots/panel-tabs.png?raw=true)
-
 Turns tab bar into a "panel", which behaves similarly to other panels(only tested on windows).
-
 <pre>&lt;script src="custom/panel-tabs/main.js"&gt;&lt;/script&gt;</pre>
+![](/screenshots/panel-tabs.png?raw=true)
 
 Known issues:
 
