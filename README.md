@@ -7,18 +7,23 @@ Mac: $installdir/Contents/versions/1.0.174.8/Vivaldi Framework/resources/vivaldi
 
 #####White skin
 Modify the color of addressbar and panel
-<pre>&lt;link rel="stylesheet" href="custom/white/style.css" /&gt;</pre>
+````html
+<link rel="stylesheet" href="custom/white/style.css" />
+````
 ![](/screenshots/white.png?raw=true)
 
 #####Modify menu position
 Move the vivaldi menu to the addressbar when native window is enabled(only tested on windows).
-<pre>&lt;link rel="stylesheet" href="custom/menu/style.css" /&gt;</pre>
+````html
+<link rel="stylesheet" href="custom/menu/style.css" />
+````
 ![](/screenshots/menu.png?raw=true)
 
 #####Tabs panel
 Turns tab bar into a "panel", which behaves similarly to other panels(only tested on windows).
-<pre>&lt;script src="custom/panel-tabs/main.js"&gt;&lt;/script&gt;</pre>
-![](/screenshots/panel-tabs.png?raw=true)
+````html
+<script src="custom/panel-tabs/main.js"></script>
+````
 
 Known issues:
 
@@ -28,6 +33,4 @@ Known issues:
 4. Toggling panels with menu or keyboard shortcuts doesn't work
 5. Very likely to be incompatible with future releases
 
-<style>
-image{width:400px}
-</style>
+![](/screenshots/panel-tabs.png?raw=true)
