@@ -1,0 +1,7 @@
+#browser:not(.mac).native.address-top:not(.tabs-top) #header{
+    position:absolute;
+    top:5px;
+}
+#browser:not(.mac).native.address-top:not(.tabs-top) .toolbar.toolbar-addressbar>*:first-child{
+    margin-left:30px;
+}
