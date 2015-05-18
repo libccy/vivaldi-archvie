@@ -32,7 +32,7 @@ Turns tab bar into a "panel", which behaves similarly to other panels(only teste
 <script src="custom/panel-tabs/main.js"></script>
 ````
 
-Known issues:
+Known issues
 
 * The previous tweak(modify menu position) must be enabled
 * Tabs and panels must be set to left
