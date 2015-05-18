@@ -27,4 +27,4 @@ Known issues:
 2. Tabs and panels must be set to left
 3. Panel width is not adjustable
 4. Toggling panels with menu or keyboard shortcuts doesn't work
-5. Only tested on 1.0.174.8 for windows and is very likely to be incompatible with future releases
+5. Very likely to be incompatible with future releases
