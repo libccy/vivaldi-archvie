@@ -1,7 +1,12 @@
 # vivaldi
 
 #####Usage
-Copy the tweaks folder to the same directory as browser.html, then modify browser.html to enable a specific feature.<br>
+Copy the tweaks folder to the same directory as browser.html, then modify browser.html to enable a specific tweak.
+
+If you don't know where to put the code, paste them under this line
+````html
+<script src="bundle.js"></script>
+````
 
 Windows
 ````
