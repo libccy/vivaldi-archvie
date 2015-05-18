@@ -1,4 +1,4 @@
-# vivaldi
+# vivaldi tweaks
 
 #####Usage
 Copy the tweaks folder to the same directory as browser.html, then modify browser.html to enable a specific tweak.
