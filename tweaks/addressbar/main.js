@@ -21,7 +21,6 @@
             if(value>0&&value<100){
                 bool=true;
             }
-            console.log(value);
         }
         if(bool){
             addressbar.classList.add('tweak-show');
