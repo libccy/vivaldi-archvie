@@ -11,6 +11,13 @@ If you are not sure where to put the code, paste them under this line
 <script src="bundle.js"></script>
 ````
 
+###Audo-hide addressbar
+Show addressbar only when focused or page loading
+````html
+<script src="tweaks/addressbar/main.js"></script>
+````
+![](/screenshots/addressbar.png?raw=true)
+
 ###Cycle tabs
 Cycle through tabs by right-click+mousewheel
 ````html
