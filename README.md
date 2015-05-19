@@ -11,6 +11,12 @@ If you are not sure where to put the code, paste them under this line
 <script src="bundle.js"></script>
 ````
 
+###Cycle tabs
+Cycle through tabs by right-click+mousewheel
+````html
+<script src="tweaks/cycle-tabs/main.js"></script>
+````
+![](/screenshots/cycle-tabs.png?raw=true)
 
 ###White skin
 Modify the color of addressbar and panel.
@@ -25,13 +31,6 @@ Move the vivaldi menu to the addressbar when native window is enabled(only teste
 <link rel="stylesheet" href="tweaks/menu/style.css" />
 ````
 ![](/screenshots/menu.png?raw=true)
-
-###Cycle tabs
-Cycle through tabs by right-click+mousewheel
-````html
-<script src="tweaks/cycle-tabs/main.js"></script>
-````
-![](/screenshots/cycle-tabs.png?raw=true)
 
 ###Tabs panel
 Turns tab bar into a "panel", which behaves similarly to other panels(only tested on windows).
