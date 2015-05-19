@@ -16,7 +16,7 @@ Show tabbar when hovering the icon on the sidebar and hide tabbar when mouse lea
 ````html
 <script src="tweaks/popup-tabs/main.js"></script>
 ````
-![](/screenshots/addressbar.png?raw=true)
+![](/screenshots/popup-tabs.png?raw=true)
 
 ###Audo-hide addressbar
 Show addressbar only when focused or page loading
