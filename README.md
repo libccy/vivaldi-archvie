@@ -11,6 +11,13 @@ If you are not sure where to put the code, paste them under this line
 <script src="bundle.js"></script>
 ````
 
+###Popup tabs
+Show tabbar when hovering the icon on the sidebar and hide tabbar when mouse leaves it.
+````html
+<script src="tweaks/popup-tabs/main.js"></script>
+````
+![](/screenshots/addressbar.png?raw=true)
+
 ###Audo-hide addressbar
 Show addressbar only when focused or page loading
 ````html
@@ -40,7 +47,7 @@ Move the vivaldi menu to the addressbar when native window is enabled(only teste
 ![](/screenshots/menu.png?raw=true)
 
 ###Tabs panel
-Turns tab bar into a "panel", which behaves similarly to other panels(only tested on windows).
+Turn tab bar into a "panel", which behaves similarly to other panels(only tested on windows).
 ````html
 <script src="tweaks/panel-tabs/main.js"></script>
 ````
