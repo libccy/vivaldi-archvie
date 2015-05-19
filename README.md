@@ -15,28 +15,28 @@ If you are not sure where to put the code, paste them under this line
 ###White skin
 Modify the color of addressbar and panel.
 ````html
-<link rel="stylesheet" href="custom/white/style.css" />
+<link rel="stylesheet" href="tweaks/white/style.css" />
 ````
 ![](/screenshots/white.png?raw=true)
 
 ###Menu mod
 Move the vivaldi menu to the addressbar when native window is enabled(only tested on windows).
 ````html
-<link rel="stylesheet" href="custom/menu/style.css" />
+<link rel="stylesheet" href="tweaks/menu/style.css" />
 ````
 ![](/screenshots/menu.png?raw=true)
 
 ###Cycle tabs
 Cycle through tabs by right-click+mousewheel
 ````html
-<script src="custom/cycle-tabs/main.js"></script>
+<script src="tweaks/cycle-tabs/main.js"></script>
 ````
 ![](/screenshots/cycle-tabs.png?raw=true)
 
 ###Tabs panel
 Turns tab bar into a "panel", which behaves similarly to other panels(only tested on windows).
 ````html
-<script src="custom/panel-tabs/main.js"></script>
+<script src="tweaks/panel-tabs/main.js"></script>
 ````
 
 Current issues
