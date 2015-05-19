@@ -3,8 +3,8 @@
 ###Usage
 Copy the tweaks folder to the same directory as browser.html, then modify browser.html to enable a specific tweak.
 <pre>
-Windows: $installdir/Application/1.0.174.8/resources/vivaldi<br>
-Mac: $installdir/Contents/versions/1.0.174.8/Vivaldi Framework/resources/vivaldi
+Windows: $installdir/Application/1.0.178.2/resources/vivaldi<br>
+Mac: $installdir/Contents/versions/1.0.178.2/Vivaldi Framework/resources/vivaldi
 </pre>
 If you are not sure where to put the code, paste them under this line
 ````html
