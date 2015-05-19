@@ -34,3 +34,13 @@
     background-image:none !important;
     box-shadow: none !important;
 }
+.startpage-navigation-group{
+    padding-top:5px;
+}
+
+@media screen and (max-width:625px){
+    #browser.address-top:not(.tabs-top) .toolbar-addressbar{
+        width:80%;
+        left:10%;
+    }
+}
