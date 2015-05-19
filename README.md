@@ -12,7 +12,8 @@ If you are not sure where to put the code, paste them under this line
 ````
 
 ###Popup tabs
-Show tabbar when hovering the icon on the sidebar and hide tabbar when mouse leaves it.
+Show tabbar when hovering the icon on the sidebar and hide tabbar when mouse leaves it
+(tabs position must be set to left).
 ````html
 <script src="tweaks/popup-tabs/main.js"></script>
 ````
