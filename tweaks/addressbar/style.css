@@ -1,0 +1,36 @@
+#browser:not(.mac).native.address-top:not(.tabs-top) #header{
+    position:absolute;
+    top:5px;
+}
+#browser:not(.mac).native.address-top:not(.tabs-top) #switch>*:first-child{
+    margin-top:30px;
+}
+
+#browser.address-top:not(.tabs-top) .toolbar-addressbar{
+    width: 500px;
+    left:calc(50% - 250px);
+    position: absolute;
+    box-shadow: none;
+    border-style: solid;
+    border-width: 0 1px 1px;
+    border-color: rgba(0,0,0,0.1);
+    /*top:-35px;*/
+    transition: top 0.2s;
+}
+#browser.address-top:not(.tabs-top) .toolbar-addressbar:not(.tweak-show){
+    top:-35px;
+}
+#browser.address-top:not(.tabs-top) .toolbar-addressbar.tweak-show{
+    top:0;
+}
+#browser.address-top:not(.tabs-top) .toolbar-addressbar>*:not(.addressfield){
+    display: none;
+}
+.startpage{
+    padding-top:35px;
+}
+.startpage-navigation{
+    background:none !important;
+    background-image:none !important;
+    box-shadow: none !important;
+}
