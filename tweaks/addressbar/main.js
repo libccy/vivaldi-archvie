@@ -13,7 +13,8 @@
     var observer = new MutationObserver(function(mutations) {
         var bool=false;
         var indicator=addressfield.querySelector('progress');
-        if(addressfield.classList.contains('focused')){
+        if(addressfield.classList.contains('focused')||
+        addressfield.querySelector('.dialog-add-bookmark')){
             bool=true;
         }
         else if(indicator&&indicator.classList.contains('loading')){

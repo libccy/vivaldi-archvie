@@ -1,15 +1,17 @@
 (function(){
+    var link=document.createElement('link');
+    link.rel='stylesheet';
+    link.href='tweaks/cycle-tabs/style.css';
+    document.head.appendChild(link);
+}());
+
+(function(){
     'use strict';
     var dispatchMouseEvent = function(target, var_args) {
 		var e = document.createEvent("MouseEvents");
 		e.initEvent.apply(e, Array.prototype.slice.call(arguments, 1));
 		target.dispatchEvent(e);
 	};
-
-    var link=document.createElement('link');
-    link.rel='stylesheet';
-    link.href='tweaks/cycle-tabs/style.css';
-    document.head.appendChild(link);
 
     var browser=document.body.querySelector('#browser');
     var container=document.createElement('div');
@@ -63,10 +65,11 @@
         if(right){
             var active=container.querySelector('.tab.active');
             if(active){
-                dispatchMouseEvent(active._cycleLink, 'mouseover', true, true);
+                dispatchMouseEvent(active._cycleLink, 'mouseenter', true, true);
                 dispatchMouseEvent(active._cycleLink, 'mousedown', true, true);
-                dispatchMouseEvent(active._cycleLink, 'click', true, true);
                 dispatchMouseEvent(active._cycleLink, 'mouseup', true, true);
+                dispatchMouseEvent(active._cycleLink, 'click', true, true);
+                dispatchMouseEvent(active._cycleLink, 'mouseleave', true, true);
             }
         }
         clear();

@@ -16,7 +16,8 @@
     -webkit-filter:invert(0.7);
     background-color: transparent !important;
 }
-#switch button:hover{
+#switch button:hover,
+#switch button.hoveractive{
     -webkit-filter:invert(1);
 }
 #switch button.active{

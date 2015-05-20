@@ -17,14 +17,14 @@
 
 #tabs-container{
 	position: absolute;
-	z-index: 1;
 	width: 160px;
 	height:80%;
 	top:10%;
 	left:50px;
 	background: rgba(255,255,255,0.8);
 	box-shadow: 0 2px 8px rgba(0,0,0,.3);
-	transition:all 0.2s;
+	transition-duration: 0.2s;
+	transition-property: opacity,visibility;
 }
 #tabs-container:not(.tweak-show){
 	visibility: hidden;
@@ -34,15 +34,13 @@
 	visibility: visible;
 	opacity: 1;
 }
-/*#tabs-container .tab-spacer{
-	display: none;
-}
  #tabs-container.left #tabs .trash{
-	margin-left: auto;
-	margin-right: 40px;
-	margin-top: -30px;
+	position: absolute;
+	bottom: 0;
+	right: 40px;
 }
  #tabs-container.left #tabs .newtab{
-	margin-left: 40px;
-	margin-top:auto;
-}*/
+	position: absolute;
+	bottom: 0;
+	left: 40px;
+}

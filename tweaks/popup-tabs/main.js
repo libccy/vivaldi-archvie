@@ -15,12 +15,31 @@
         panelswitch.appendChild(tabbutton);
 
         var tabbar=document.querySelector('#tabs-container');
+        var timeout=null;
 
-        tabbutton.addEventListener('mouseover',function(){
-            tabbar.classList.toggle('tweak-show');
-        });
-        tabbar.addEventListener('mouseleave',function(){
-            this.classList.remove('tweak-show');
+        var show=function(){
+            tabbar.classList.add('tweak-show');
+            tabbar.style.zIndex=1;
+            tabbutton.classList.add('hoveractive');
+            if(timeout){
+                clearTimeout(timeout);
+            }
+        };
+        var hide=function(){
+            tabbar.classList.remove('tweak-show');
+            tabbutton.classList.remove('hoveractive');
+            timeout=setTimeout(function(){
+                tabbar.style.zIndex=-1;
+            },200);
+        };
+        tabbutton.addEventListener('mouseenter',show);
+        tabbar.addEventListener('mouseleave',hide);
+
+        var newtab=tabbar.querySelector('.newtab');
+        newtab.addEventListener('mousedown',function(e){
+            if(e.button===1){
+                this.click();
+            }
         });
     });
 }());
