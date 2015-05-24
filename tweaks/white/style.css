@@ -15,6 +15,7 @@
 #switch button{
     -webkit-filter:invert(0.7);
     background-color: transparent !important;
+    transition: all 0.2s;
 }
 #switch button:hover,
 #switch button.hoveractive{
@@ -24,4 +25,11 @@
     -webkit-filter:invert(0.4);
     background-color:rgba(255,255,255,.2) !important;
     box-shadow:none !important;
+}
+
+#switch .button-toolbar{
+    -webkit-filter:invert(0.6);
+}
+#switch .button-toolbar:hover:not(.disabled){
+    -webkit-filter:invert(0.8);
 }

@@ -10,6 +10,17 @@
     var addressbar=document.body.querySelector('.toolbar-addressbar');
     var addressfield=addressbar.querySelector('.addressfield');
 
+    var panelswitch=document.body.querySelector('#switch');
+    panelswitch.appendChild(addressbar.querySelector('.button-toolbar.back'));
+    panelswitch.appendChild(addressbar.querySelector('.button-toolbar.forward'));
+    panelswitch.appendChild(addressbar.querySelector('.button-toolbar.reload'));
+
+    var home=addressbar.querySelector('.button-toolbar.home');
+    panelswitch.appendChild(home);
+    home.addEventListener('mouseenter',function(){
+        addressbar.classList.toggle('tweak-show');
+    });
+
     var observer = new MutationObserver(function(mutations) {
         var bool=false;
         var indicator=addressfield.querySelector('progress');

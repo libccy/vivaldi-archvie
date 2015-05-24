@@ -44,3 +44,11 @@
 	bottom: 0;
 	left: 40px;
 }
+
+#tabs-container{
+	width: 180px;
+	height: 100%;
+	top:0;
+	left:34px;
+	box-shadow: 1px 0 rgba(117,119,121,.2);
+}

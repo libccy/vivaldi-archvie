@@ -17,6 +17,8 @@
         var tabbar=document.querySelector('#tabs-container');
         var timeout=null;
 
+        // var addressbar=document.body.querySelector('.toolbar-addressbar');
+
         var show=function(){
             tabbar.classList.add('tweak-show');
             tabbar.style.zIndex=1;
@@ -24,8 +26,10 @@
             if(timeout){
                 clearTimeout(timeout);
             }
+            // addressbar.classList.add('tweak-show');
         };
-        var hide=function(){
+        var hide=function(e){
+            if(e&&e.x<214) return;
             tabbar.classList.remove('tweak-show');
             tabbutton.classList.remove('hoveractive');
             timeout=setTimeout(function(){
@@ -34,12 +38,5 @@
         };
         tabbutton.addEventListener('mouseenter',show);
         tabbar.addEventListener('mouseleave',hide);
-
-        var newtab=tabbar.querySelector('.newtab');
-        newtab.addEventListener('mousedown',function(e){
-            if(e.button===1){
-                this.click();
-            }
-        });
     });
 }());
