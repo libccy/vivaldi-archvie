@@ -1,9 +1,15 @@
 #browser:not(.mac).native.address-top:not(.tabs-top) #header{
     position:absolute;
-    top:5px;
+    top:calc(100% - 55px);
 }
-#browser:not(.mac).native.address-top:not(.tabs-top) #switch>*:first-child{
-    margin-top:30px;
+#browser .vivaldi{
+    background-image: url(/tweaks/addressbar/vivaldi.png) !important;
+    background-size:16px !important;
+    -webkit-filter: invert(0.6);
+    transition: all 0.2s;
+}
+#browser .vivaldi:hover{
+    -webkit-filter: invert(0.3);
 }
 
 #browser.address-top:not(.tabs-top) .toolbar-addressbar{
@@ -40,6 +46,27 @@
 
 #switch .button-toolbar.back{
     margin-top:30px;
+}
+
+
+#switch button.tabs.button-toolbar {
+	background-image: url(/tweaks/popup-tabs/panel-tabs-button.png)
+}
+@media (-webkit-min-device-pixel-ratio:2) {
+	#switch button.tabs.button-toolbar {
+		background-image: url(/tweaks/popup-tabs/panel-tabs-button@2x.png)
+	}
+}
+
+#switch .button-toolbar{
+    -webkit-filter:invert(0.5);
+}
+#switch .button-toolbar:disabled{
+    -webkit-filter:invert(0.5) !important;
+}
+#switch .button-toolbar:hover,
+#switch .button-toolbar.tabs.hoveractive{
+    -webkit-filter:invert(0.7);
 }
 
 @media screen and (max-width:625px){

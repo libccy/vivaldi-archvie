@@ -11,7 +11,7 @@
         var panelswitch=document.querySelector('#switch');
 
         var tabbutton=document.createElement('button');
-        tabbutton.className='tabs';
+        tabbutton.className='button-toolbar tabs';
         panelswitch.appendChild(tabbutton);
 
         var tabbar=document.querySelector('#tabs-container');
@@ -29,7 +29,9 @@
             // addressbar.classList.add('tweak-show');
         };
         var hide=function(e){
-            if(e&&e.x<214) return;
+            if(!e.toElement) return;
+            if(!e.toElement.parentElement) return;
+            if(e.which) return;
             tabbar.classList.remove('tweak-show');
             tabbutton.classList.remove('hoveractive');
             timeout=setTimeout(function(){

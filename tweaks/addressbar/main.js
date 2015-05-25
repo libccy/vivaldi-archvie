@@ -38,7 +38,23 @@
             addressbar.classList.add('tweak-show');
         }
         else{
-            addressbar.classList.remove('tweak-show');
+            setTimeout(function(){
+                var bool=false;
+                var indicator=addressfield.querySelector('progress');
+                if(addressfield.classList.contains('focused')||
+                addressfield.querySelector('.dialog-add-bookmark')){
+                    bool=true;
+                }
+                else if(indicator&&indicator.classList.contains('loading')){
+                    var value=parseInt(indicator.value);
+                    if(value>0&&value<100){
+                        bool=true;
+                    }
+                }
+                if(!bool){
+                    addressbar.classList.remove('tweak-show');
+                }
+            },200);
         }
     });
     observer.observe(addressfield, {
