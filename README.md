@@ -27,7 +27,7 @@ Note: doesn't work when tabs are set to top
 ````
 Option to show rewind and fast forward button:
 ````html
-<script src="tweaks/addressbar/main.js?rewind=true"></script>
+<script src="tweaks/addressbar/main.js?rewind=1"></script>
 ````
 ![](/screenshots/addressbar.png?raw=true)
 
