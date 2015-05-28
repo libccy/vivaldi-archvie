@@ -26,3 +26,14 @@
     background-color:rgba(255,255,255,.2) !important;
     box-shadow:none !important;
 }
+
+
+#browser.native .vivaldi{
+    background-image: url(/tweaks/addressbar/vivaldi.png) !important;
+    background-size:16px !important;
+    -webkit-filter: invert(0.6);
+    transition: all 0.2s;
+}
+#browser.native .vivaldi:hover{
+    -webkit-filter: invert(0.3);
+}

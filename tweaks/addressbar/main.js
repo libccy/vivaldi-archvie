@@ -14,44 +14,53 @@
     panelswitch.appendChild(addressbar.querySelector('.button-toolbar.back'));
     panelswitch.appendChild(addressbar.querySelector('.button-toolbar.forward'));
     panelswitch.appendChild(addressbar.querySelector('.button-toolbar.reload'));
+    panelswitch.appendChild(addressbar.querySelector('.button-toolbar.home'));
 
-    var home=addressbar.querySelector('.button-toolbar.home');
-    panelswitch.appendChild(home);
-    home.addEventListener('mouseenter',function(){
-        addressbar.classList.toggle('tweak-show');
-    });
-
-    var observer = new MutationObserver(function(mutations) {
-        var bool=false;
+    var checkshow=function(){
         var indicator=addressfield.querySelector('progress');
         if(addressfield.classList.contains('focused')||
         addressfield.querySelector('.dialog-add-bookmark')){
-            bool=true;
+            return true;
         }
         else if(indicator&&indicator.classList.contains('loading')){
             var value=parseInt(indicator.value);
             if(value>0&&value<100){
-                bool=true;
+                return true;
             }
         }
-        if(bool){
+        return false;
+    };
+    var hover=document.createElement('div');
+    hover.id='addressbar-hover';
+    var showing=false;
+    hover.addEventListener('mouseenter',function(){
+        if(showing) return;
+        if(addressbar.classList.contains('tweak-show')){
+            if(!checkshow()){
+                addressbar.classList.remove('tweak-show');
+                showing=true;
+                setTimeout(function(){
+                    showing=false;
+                },500);
+            }
+        }
+        else{
+            addressbar.classList.add('tweak-show');
+            showing=true;
+            setTimeout(function(){
+                showing=false;
+            },500);
+        }
+    });
+    document.body.querySelector('#browser').appendChild(hover);
+
+    var observer = new MutationObserver(function(mutations) {
+        if(checkshow()){
             addressbar.classList.add('tweak-show');
         }
         else{
             setTimeout(function(){
-                var bool=false;
-                var indicator=addressfield.querySelector('progress');
-                if(addressfield.classList.contains('focused')||
-                addressfield.querySelector('.dialog-add-bookmark')){
-                    bool=true;
-                }
-                else if(indicator&&indicator.classList.contains('loading')){
-                    var value=parseInt(indicator.value);
-                    if(value>0&&value<100){
-                        bool=true;
-                    }
-                }
-                if(!bool){
+                if(!checkshow()){
                     addressbar.classList.remove('tweak-show');
                 }
             },200);

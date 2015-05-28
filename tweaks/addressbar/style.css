@@ -1,15 +1,6 @@
 #browser:not(.mac).native.address-top:not(.tabs-top) #header{
     position:absolute;
-    top:calc(100% - 55px);
-}
-#browser .vivaldi{
-    background-image: url(/tweaks/addressbar/vivaldi.png) !important;
-    background-size:16px !important;
-    -webkit-filter: invert(0.6);
-    transition: all 0.2s;
-}
-#browser .vivaldi:hover{
-    -webkit-filter: invert(0.3);
+    top:5px;
 }
 
 #browser.address-top:not(.tabs-top) .toolbar-addressbar{
@@ -48,6 +39,9 @@
     margin-top:30px;
 }
 
+#browser:not(.mac).native.address-top:not(.tabs-top) #switch>*:first-child{
+    margin-top:30px;
+}
 
 #switch button.tabs.button-toolbar {
 	background-image: url(/tweaks/popup-tabs/panel-tabs-button.png)
@@ -67,6 +61,18 @@
 #switch .button-toolbar:hover,
 #switch .button-toolbar.tabs.hoveractive{
     -webkit-filter:invert(0.7);
+}
+
+#addressbar-hover{
+    width: 100%;
+    height: 5px;
+    top:0;
+    left:0;
+    position: absolute;
+    z-index: 1000;
+}
+#browser:not(.native) #addressbar-hover{
+    top:25px;
 }
 
 @media screen and (max-width:625px){

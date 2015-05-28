@@ -1,0 +1,6 @@
+#switch>*:first-child{
+    margin-top:0 !important;
+}
+#browser:not(.mac).native.address-top:not(.tabs-top) #header{
+    top:calc(100% - 55px) !important;
+}
