@@ -20,8 +20,7 @@ Show tabbar when hovering the icon on the sidebar and hide tabbar when mouse lea
 ![](/screenshots/popup-tabs.png?raw=true)
 
 ###Audo-hide addressbar
-Show addressbar only when focused or page loading
-Note: doesn't work when tabs are set to top
+Show addressbar only when focused or page loading(doesn't work when tabs are set to top).
 ````html
 <script src="tweaks/addressbar/main.js"></script>
 ````
