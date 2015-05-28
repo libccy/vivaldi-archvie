@@ -25,9 +25,9 @@ Note: doesn't work when tabs are set to top
 ````html
 <script src="tweaks/addressbar/main.js"></script>
 ````
-Option to show rewind and fast forward button:
+By default, buttons on the addressbar are moved to the sidebar, hide them like this:
 ````html
-<script src="tweaks/addressbar/main.js?rewind=1"></script>
+<script src="tweaks/addressbar/main.js?back=0;rewind=0;reload=0;home=0"></script>
 ````
 ![](/screenshots/addressbar.png?raw=true)
 
