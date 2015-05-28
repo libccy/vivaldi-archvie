@@ -79,7 +79,6 @@
             if(container.classList.contains('hidden')){
                 show();
             }
-            else{
                 var active=container.querySelector('.tab.active');
                 if(active){
                     active.classList.remove('active');
@@ -100,7 +99,7 @@
                         }
                     }
                 }
-            }
+            
             e.preventDefault();
             e.stopPropagation();
         }
