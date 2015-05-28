@@ -28,6 +28,7 @@ By default, buttons on the addressbar are moved to the sidebar, hide them like t
 ````html
 <script src="tweaks/addressbar/main.js?back=0;rewind=0;reload=0;home=0"></script>
 ````
+To toggle addressbar manually, move the mouse slowly to the top of the browser.
 ![](/screenshots/addressbar.png?raw=true)
 
 ###Cycle tabs
