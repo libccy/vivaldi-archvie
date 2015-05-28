@@ -21,6 +21,7 @@ Show tabbar when hovering the icon on the sidebar and hide tabbar when mouse lea
 
 ###Audo-hide addressbar
 Show addressbar only when focused or page loading(doesn't work when tabs are set to top).
+To toggle addressbar manually, move the mouse slowly to the top of the browser.
 ````html
 <script src="tweaks/addressbar/main.js"></script>
 ````
@@ -28,7 +29,6 @@ By default, buttons on the addressbar are moved to the sidebar, hide them like t
 ````html
 <script src="tweaks/addressbar/main.js?back=0;rewind=0;reload=0;home=0"></script>
 ````
-To toggle addressbar manually, move the mouse slowly to the top of the browser.
 ![](/screenshots/addressbar.png?raw=true)
 
 ###Cycle tabs
