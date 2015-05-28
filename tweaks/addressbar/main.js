@@ -9,23 +9,43 @@
     'use strict';
     var addressbar=document.body.querySelector('.toolbar-addressbar');
     var addressfield=addressbar.querySelector('.addressfield');
-
+    var rewind=true,reload=true,back=true,home=true;
+    var scripts=document.body.querySelectorAll('script');
+    for(var i=0;i<scripts.length;i++){
+        var src=scripts[i].src;
+        if(src.indexOf('tweaks/addressbar/main.js')!==-1){
+            if(scripts[i].src.indexOf('back=0')!==-1){
+                back=false;
+            }
+            if(scripts[i].src.indexOf('rewind=0')!==-1){
+                rewind=false;
+            }
+            if(scripts[i].src.indexOf('reload=0')!==-1){
+                reload=false;
+            }
+            if(scripts[i].src.indexOf('home=0')!==-1){
+                home=false;
+            }
+            break;
+        }
+    }
 
 
     var panelswitch=document.body.querySelector('#switch');
-    panelswitch.appendChild(addressbar.querySelector('.button-toolbar.back'));
-    panelswitch.appendChild(addressbar.querySelector('.button-toolbar.forward'));
-    var scripts=document.body.querySelectorAll('script');
-    for(var i=0;i<scripts.length;i++){
-        if(scripts[i].src.indexOf('tweaks/addressbar/main.js')!==-1){
-            if(scripts[i].src.indexOf('rewind=1')!==-1){
-                panelswitch.appendChild(addressbar.querySelector('.button-toolbar.rewind'));
-                panelswitch.appendChild(addressbar.querySelector('.button-toolbar.next'));
-            }
-        }
+    if(back){
+        panelswitch.appendChild(addressbar.querySelector('.button-toolbar.back'));
+        panelswitch.appendChild(addressbar.querySelector('.button-toolbar.forward'));
     }
-    panelswitch.appendChild(addressbar.querySelector('.button-toolbar.reload'));
-    panelswitch.appendChild(addressbar.querySelector('.button-toolbar.home'));
+    if(rewind){
+        panelswitch.appendChild(addressbar.querySelector('.button-toolbar.rewind'));
+        panelswitch.appendChild(addressbar.querySelector('.button-toolbar.next'));
+    }
+    if(reload){
+        panelswitch.appendChild(addressbar.querySelector('.button-toolbar.reload'));
+    }
+    if(home){
+        panelswitch.appendChild(addressbar.querySelector('.button-toolbar.home'));
+    }
 
     var checkshow=function(){
         var indicator=addressfield.querySelector('progress');
