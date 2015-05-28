@@ -10,9 +10,20 @@
     var addressbar=document.body.querySelector('.toolbar-addressbar');
     var addressfield=addressbar.querySelector('.addressfield');
 
+
+
     var panelswitch=document.body.querySelector('#switch');
     panelswitch.appendChild(addressbar.querySelector('.button-toolbar.back'));
     panelswitch.appendChild(addressbar.querySelector('.button-toolbar.forward'));
+    var scripts=document.body.querySelectorAll('script');
+    for(var i=0;i<scripts.length;i++){
+        if(scripts[i].src.indexOf('tweaks/addressbar/main.js')!==-1){
+            if(scripts[i].src.indexOf('rewind=1')!==-1){
+                panelswitch.appendChild(addressbar.querySelector('.button-toolbar.rewind'));
+                panelswitch.appendChild(addressbar.querySelector('.button-toolbar.next'));
+            }
+        }
+    }
     panelswitch.appendChild(addressbar.querySelector('.button-toolbar.reload'));
     panelswitch.appendChild(addressbar.querySelector('.button-toolbar.home'));
 
