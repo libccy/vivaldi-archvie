@@ -5,7 +5,7 @@
 
 #browser.address-top:not(.tabs-top) .toolbar-addressbar{
     width: 500px;
-    left:calc(50% - 250px);
+    left:calc(50% - 233px);
     position: absolute;
     box-shadow: none;
     border-style: solid;
@@ -32,7 +32,13 @@
     box-shadow: none !important;
 }
 .startpage-navigation-group{
-    padding-top:5px;
+    margin-top:5px;
+}
+.startpage-navigation-group>span{
+    background-color: rgba(255,255,255,0.5) !important;
+}
+.startpage-navigation-group>span:hover{
+    background-color: rgba(255,255,255,0.8) !important;
 }
 
 #switch .button-toolbar.back{
@@ -79,6 +85,6 @@
 @media screen and (max-width:625px){
     #browser.address-top:not(.tabs-top) .toolbar-addressbar{
         width:80%;
-        left:10%;
+        left:calc(10% + 17px);
     }
 }

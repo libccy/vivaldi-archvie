@@ -123,27 +123,44 @@ h3 {
 	box-shadow: none
 }
 
+#browser.native.stacks-off #tabs-container {
+	padding-top: 0;
+	padding-bottom: 0
+}
+
 #browser.native.mac div#titlebar,#browser.native.mac:not(.tabs-top) div#header {
 	display: none
 }
 
+#browser.native.mac #tabs-container #tabs {
+	padding: 0
+}
+
 #browser.native.mac.tabs-bottom #tabs-container #tabs,#browser.native.mac.tabs-top #tabs-container #tabs {
-	padding-left: 6px
+	margin-top: 0
+}
+
+#browser.native.linux.tabs-bottom #tabs-container #tabs,#browser.native.win.tabs-bottom #tabs-container #tabs {
+	padding: 0
 }
 
 #browser.native.linux.normal #tabs-container.top,#browser.native.win.normal #tabs-container.top {
 	padding-top: 6px
 }
 
+#browser.native.linux.stacks-off #tabs-container.top,#browser.native.win.stacks-off #tabs-container.top {
+	padding-top: 0
+}
+
+#browser.native.linux.tabs-top.stacks-off #titlebar button,#browser.native.win.tabs-top.stacks-off #titlebar button {
+	height: 30px
+}
+
 #browser.native.linux.normal:not(.alt) #tabs-container.top #tabs,#browser.native.win.normal:not(.alt) #tabs-container.top #tabs {
 	padding-right: 0
 }
 
-#browser.native.linux.alt #tabs-container.top #tabs,#browser.native.win.alt #tabs-container.top #tabs {
-	padding-left: 6px
-}
-
-#browser.native.linux.normal .topmenu+#tabs-container.top,#browser.native.win.normal .topmenu+#tabs-container.top {
+#browser.native.linux.alt #tabs-container.top #tabs,#browser.native.linux.normal .topmenu+#tabs-container.top #tabs,#browser.native.win.alt #tabs-container.top #tabs,#browser.native.win.normal .topmenu+#tabs-container.top #tabs {
 	padding-left: 0
 }
 
@@ -537,7 +554,8 @@ h3 {
 
 .toolbar {
 	display: flex;
-	position: relative
+	position: relative;
+	fill: #fff
 }
 
 .toolbar.toolbar-addressbar {
@@ -554,6 +572,13 @@ h3 {
 	min-width: 34px
 }
 
+.toolbar.toolbar-addressbar .button-toolbar svg {
+	width: 26px;
+	height: auto;
+	pointer-events: none;
+	transition: .2s
+}
+
 .toolbar.toolbar-addressbar .button-toolbar:focus:not(:disabled),.toolbar.toolbar-addressbar .button-toolbar:hover:not(:disabled) {
 	background-color: rgba(255,255,255,.15);
 	box-shadow: none
@@ -561,8 +586,12 @@ h3 {
 
 .toolbar.toolbar-addressbar .button-toolbar:active:not(:disabled),.toolbar.toolbar-addressbar .button-toolbar:focus:active {
 	background-color: rgba(255,255,255,.08);
-	box-shadow: none;
-	background-size: 24px
+	box-shadow: none
+}
+
+.toolbar.toolbar-addressbar .button-toolbar:active:not(:disabled):active svg,.toolbar.toolbar-addressbar .button-toolbar:focus:active:active svg {
+	transform: scale(0.9);
+	transition-duration: 0
 }
 
 .win.normal .toolbar.toolbar-addressbar {
@@ -593,11 +622,17 @@ h3 {
 	margin-bottom: 6px
 }
 
+.toolbar.icons svg {
+	fill: #000;
+	width: 26px;
+	height: auto;
+	pointer-events: none;
+	transition: .2s
+}
+
 .toolbar.icons .button-toolbar {
-	text-indent: 24px;
 	min-width: 28px;
 	height: 28px;
-	padding-right: 9px;
 	margin-right: 0;
 	margin-bottom: 6px;
 	border: 1px solid #dcddde;
@@ -605,7 +640,8 @@ h3 {
 	border-right-color: #eee;
 	background-position: 0 50%;
 	color: #1f262a;
-	background-color: #fff
+	background-color: #fff;
+	padding-top: 0
 }
 
 .toolbar.icons .button-toolbar:first-of-type {
@@ -757,88 +793,15 @@ header+.toolbar.icons .button-toolbar:last-of-type {
 	box-shadow: none
 }
 
-.button-toolbar.rewind {
-	background-image: url(/resources/symbol-rewind.png);
+.button-toolbar {
+	padding-left: 0;
+	padding-right: 0;
+	padding-bottom: 0
+}
+
+.button-toolbar.next,.button-toolbar.rewind {
 	min-width: 24px!important;
 	max-width: 24px!important
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	.button-toolbar.rewind {
-		background-image: url(/resources/symbol-rewind@2x.png)
-	}
-}
-
-.button-toolbar.back {
-	background-image: url(/resources/symbol-back.png)
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	.button-toolbar.back {
-		background-image: url(/resources/symbol-back@2x.png)
-	}
-}
-
-.button-toolbar.forward {
-	background-image: url(/resources/symbol-forward.png)
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	.button-toolbar.forward {
-		background-image: url(/resources/symbol-forward@2x.png)
-	}
-}
-
-.button-toolbar.next {
-	background-image: url(/resources/symbol-next.png);
-	min-width: 24px!important;
-	max-width: 24px!important
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	.button-toolbar.next {
-		background-image: url(/resources/symbol-next@2x.png)
-	}
-}
-
-.button-toolbar.reload {
-	background-image: url(/resources/symbol-reload.png)
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	.button-toolbar.reload {
-		background-image: url(/resources/symbol-reload@2x.png)
-	}
-}
-
-.button-toolbar.loading {
-	background-image: url(/resources/symbol-stopload.png)
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	.button-toolbar.loading {
-		background-image: url(/resources/symbol-stopload@2x.png)
-	}
-}
-
-.button-toolbar.home {
-	background-image: url(/resources/symbol-home.png)
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	.button-toolbar.home {
-		background-image: url(/resources/symbol-home@2x.png)
-	}
-}
-
-.button-toolbar.folder {
-	background-image: url(/resources/new-bookmark-folder.png)
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	.button-toolbar.folder {
-		background-image: url(/resources/new-bookmark-folder@2x.png)
-	}
 }
 
 .button-toolbar.selectedfolder {
@@ -881,84 +844,8 @@ header+.toolbar.icons .button-toolbar:last-of-type {
 	}
 }
 
-.button-toolbar.add {
-	background-image: url(/resources/symbol-add.png)
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	.button-toolbar.add {
-		background-image: url(/resources/symbol-add@2x.png)
-	}
-}
-
-.button-toolbar.delete {
-	background-image: url(/resources/symbol-remove.png)
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	.button-toolbar.delete {
-		background-image: url(/resources/symbol-remove@2x.png)
-	}
-}
-
-.button-toolbar.edit {
-	background-image: url(/resources/symbol-edit.png)
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	.button-toolbar.edit {
-		background-image: url(/resources/symbol-edit@2x.png)
-	}
-}
-
-.button-toolbar.edit.active {
-	background-image: url(/resources/symbol-edit-active.png)
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	.button-toolbar.edit.active {
-		background-image: url(/resources/symbol-edit-active@2x.png)
-	}
-}
-
-.button-toolbar.compose {
-	background-image: url(/resources/email-newmail-panel.png)
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	.button-toolbar.compose {
-		background-image: url(/resources/email-newmail-panel@2x.png)
-	}
-}
-
-.button-toolbar.send {
-	background-image: url(/resources/email-send.png)
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	.button-toolbar.send {
-		background-image: url(/resources/email-send@2x.png)
-	}
-}
-
-.button-toolbar.newaccount {
-	background-image: url(/resources/email-newmail-panel.png)
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	.button-toolbar.newaccount {
-		background-image: url(/resources/email-newmail-panel@2x.png)
-	}
-}
-
-.button-toolbar.newcontact {
-	background-image: url(/resources/symbol-add.png)
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	.button-toolbar.newcontact {
-		background-image: url(/resources/symbol-add@2x.png)
-	}
+.button-toolbar.edit.active svg {
+	fill: #006ed7
 }
 
 .button-toolbar.editcontact {
@@ -968,16 +855,6 @@ header+.toolbar.icons .button-toolbar:last-of-type {
 @media (-webkit-min-device-pixel-ratio:2) {
 	.button-toolbar.editcontact {
 		background-image: url(/resources/symbol-edit@2x.png)
-	}
-}
-
-.button-toolbar.dlstop {
-	background-image: url(/resources/symbol-stop.png)
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	.button-toolbar.dlstop {
-		background-image: url(/resources/symbol-stop@2x.png)
 	}
 }
 
@@ -991,26 +868,6 @@ header+.toolbar.icons .button-toolbar:last-of-type {
 	}
 }
 
-.button-toolbar.dlrestart {
-	background-image: url(/resources/symbol-restart.png)
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	.button-toolbar.dlrestart {
-		background-image: url(/resources/symbol-restart@2x.png)
-	}
-}
-
-.button-toolbar.dlclear {
-	background-image: url(/resources/symbol-clear.png)
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	.button-toolbar.dlclear {
-		background-image: url(/resources/symbol-clear@2x.png)
-	}
-}
-
 .button-toolbar.updatethumb {
 	background-image: url(/resources/symbol-update.png)
 }
@@ -1018,36 +875,6 @@ header+.toolbar.icons .button-toolbar:last-of-type {
 @media (-webkit-min-device-pixel-ratio:2) {
 	.button-toolbar.updatethumb {
 		background-image: url(/resources/symbol-update@2x.png)
-	}
-}
-
-.button-toolbar.note-new {
-	background-image: url(/resources/symbol-add.png)
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	.button-toolbar.note-new {
-		background-image: url(/resources/symbol-add@2x.png)
-	}
-}
-
-.button-toolbar.note-delete {
-	background-image: url(/resources/symbol-remove.png)
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	.button-toolbar.note-delete {
-		background-image: url(/resources/symbol-remove@2x.png)
-	}
-}
-
-.button-toolbar.note-folder {
-	background-image: url(/resources/new-bookmark-folder.png)
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	.button-toolbar.note-folder {
-		background-image: url(/resources/new-bookmark-folder@2x.png)
 	}
 }
 
@@ -1081,65 +908,33 @@ header+.toolbar.icons .button-toolbar:last-of-type {
 	}
 }
 
-.button-tabbar.toggle-trash {
-	background-image: url(/resources/trashcan-full.png)
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	.button-tabbar.toggle-trash {
-		background-image: url(/resources/trashcan-full@2x.png)
-	}
-}
-
-.button-tabbar.toggle-trash.active,.button-tabbar.toggle-trash:active {
-	background-image: url(/resources/trashcan-openlid.png)
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	.button-tabbar.toggle-trash.active,.button-tabbar.toggle-trash:active {
-		background-image: url(/resources/trashcan-openlid@2x.png)
-	}
-}
-
-.button-tabbar.toggle-trash:disabled {
-	background-image: url(/resources/trashcan-empty.png)
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	.button-tabbar.toggle-trash:disabled {
-		background-image: url(/resources/trashcan-empty@2x.png)
-	}
-}
-
 .button-tabbar.newtab {
-	background-image: url(/resources/tab-new.png)
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	.button-tabbar.newtab {
-		background-image: url(/resources/tab-new@2x.png)
-	}
+	fill: #000
 }
 
 .button-tabbar.input-search {
-	background-image: url(/resources/input-search.png);
-	background-position-y: 5px
+	margin-top: 2px;
+	margin-right: 6px;
+	padding-left: 2px;
+	background-color: transparent;
+	height: 22px;
+	width: 22px;
+	border: 1px solid transparent
 }
 
-@media (-webkit-min-device-pixel-ratio:2) {
-	.button-tabbar.input-search {
-		background-image: url(/resources/input-search@2x.png)
-	}
+.button-tabbar.input-search svg {
+	fill: rgba(0,0,0,.35);
+	width: 16px;
+	height: 16px
 }
 
 .button-tabbar.input-search:hover {
-	background-image: url(/resources/input-search-hover.png)
+	background-color: rgba(31,38,42,.05)
 }
 
-@media (-webkit-min-device-pixel-ratio:2) {
-	.button-tabbar.input-search:hover {
-		background-image: url(/resources/input-search-hover@2x.png)
-	}
+.button-tabbar.input-search .active,.button-tabbar.input-search:active {
+	border-color: rgba(31,38,42,.1);
+	background-color: rgba(31,38,42,.1)
 }
 
 .button-addressfield.permission-camera {
@@ -1234,24 +1029,11 @@ header+.toolbar.icons .button-toolbar:last-of-type {
 }
 
 #footer .button-toolbar-small.page-action {
-	background-image: url(/resources/symbol-page-action.png);
-	background-size: 16px
+	padding-top: 1px
 }
 
-@media (-webkit-min-device-pixel-ratio:2) {
-	#footer .button-toolbar-small.page-action {
-		background-image: url(/resources/symbol-page-action@2x.png)
-	}
-}
-
-#footer .button-toolbar-small.page-action.attention {
-	background-image: url(/resources/symbol-page-action-attention.png)
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	#footer .button-toolbar-small.page-action.attention {
-		background-image: url(/resources/symbol-page-action-attention@2x.png)
-	}
+#footer .button-toolbar-small.page-action.attention svg {
+	fill: #006ed7
 }
 
 .menu-common {
@@ -1510,9 +1292,8 @@ html {
 	box-shadow: -1px 0 rgba(117,119,121,.2),1px 0 rgba(117,119,121,.2)
 }
 
-.webpageview_content {
+.webpageview_content,.webpageview_content>div {
 	flex: 1;
-	z-index: auto;
 	height: 100%
 }
 
@@ -1922,21 +1703,14 @@ html {
 	order: -1;
 	overflow: hidden;
 	background-color: transparent;
-	background-repeat: no-repeat;
-	background-size: 16px;
-	border-top: 0;
-	border-right: 0;
-	border-left: 0;
-	border-bottom: 0;
-	background-position: 50% 50%;
+	border: 0;
 	width: 34px;
-	background-image: url(/resources/panel-toggle-footer.png)
+	padding-top: 2px
 }
 
-@media (-webkit-min-device-pixel-ratio:2) {
-	.paneltogglefooter {
-		background-image: url(/resources/panel-toggle-footer@2x.png)
-	}
+.paneltogglefooter svg {
+	fill: #000;
+	width: 16px
 }
 
 #main.right+#footer .paneltogglefooter {
@@ -1948,7 +1722,8 @@ html {
 	flex-flow: column;
 	font-size: 11.5px;
 	-webkit-user-select: none;
-	-webkit-user-drag: element
+	-webkit-user-drag: element;
+	position: relative
 }
 
 #tabs .tab+.tab {
@@ -2065,7 +1840,6 @@ html {
 }
 
 #tabs .tab .tab-thumb {
-	flex: 1;
 	background-size: 100% auto;
 	background-repeat: no-repeat;
 	background-position: 0 0;
@@ -2171,7 +1945,8 @@ html {
 	display: flex;
 	flex: 1;
 	transition: height .5s cubic-bezier(0,.85,.2,1);
-	padding: 0 0 0 6px
+	padding: 0 0 0 6px;
+	position: relative
 }
 
 #tabs.view-thumbs.scrolling {
@@ -2198,16 +1973,51 @@ html {
 }
 
 #tabs .toggle-trash {
-	transition: background .3s
+	transition: opacity .2s
+}
+
+#tabs .toggle-trash svg {
+	width: 16px;
+	height: auto
+}
+
+#tabs .toggle-trash svg path {
+	transition: .3s
+}
+
+#tabs .toggle-trash svg .trashicon-lid {
+	transform-origin: 0 0
+}
+
+#tabs .toggle-trash svg .trashicon-content {
+	transform-origin: 50% 100%;
+	opacity: .5
+}
+
+#tabs .toggle-trash:disabled {
+	opacity: .3
+}
+
+#tabs .toggle-trash:disabled .trashicon-lid,#tabs .toggle-trash:not(:active) .trashicon-lid {
+	transform: translateY(0.9px)
+}
+
+#tabs .toggle-trash:disabled .trashicon-content,#tabs .toggle-trash:not(:active) .trashicon-content {
+	transform: scaleY(0.9)
 }
 
 #tabs .newtab {
-	transition: transform .2s
+	transition: transform .2s;
+	min-width: 28px;
+	min-height: 25px;
+	width: 16px;
+	height: 16px
 }
 
 #tabs .newtab:active {
-	transform: scale(1.1);
-	transition-duration: 0
+	transform: scale(0.9);
+	transition-duration: 0;
+	image-rendering: -webkit-optimize-contrast
 }
 
 #tabs .tab-audio {
@@ -2245,28 +2055,76 @@ html {
 	opacity: 1
 }
 
-#tabs .fullwidth {
+#tabs .fullheight,#tabs .fullwidth {
 	position: absolute;
 	width: 100%;
-	height: 5px;
 	margin: 0;
-	left: 0;
 	border: 0;
-	bottom: -3px;
-	background: 0 0;
+	background: 0 0
+}
+
+#tabs .fullheight:active,#tabs .fullwidth:active {
+	z-index: 10
+}
+
+#tabs-container.bottom #tabs .fullheight,#tabs-container.bottom #tabs .fullwidth,#tabs-container.top #tabs .fullheight,#tabs-container.top #tabs .fullwidth {
+	left: 0;
+	right: 0;
+	height: 5px;
 	cursor: row-resize
 }
 
-#tabs .fullwidth:active {
+#tabs-container.bottom #tabs .fullheight:active,#tabs-container.bottom #tabs .fullwidth:active,#tabs-container.top #tabs .fullheight:active,#tabs-container.top #tabs .fullwidth:active {
 	height: 200px;
-	min-height: 200px;
-	bottom: -100px;
-	z-index: 10
+	min-height: 200px
+}
+
+#tabs-container.top #tabs .fullheight,#tabs-container.top #tabs .fullwidth {
+	bottom: -3px
+}
+
+#tabs-container.top #tabs .fullheight:active,#tabs-container.top #tabs .fullwidth:active {
+	bottom: -103px
+}
+
+#tabs-container.bottom #tabs .fullheight,#tabs-container.bottom #tabs .fullwidth {
+	top: -3px
+}
+
+#tabs-container.bottom #tabs .fullheight:active,#tabs-container.bottom #tabs .fullwidth:active {
+	top: -103px
+}
+
+#tabs-container.left #tabs .fullheight,#tabs-container.left #tabs .fullwidth,#tabs-container.right #tabs .fullheight,#tabs-container.right #tabs .fullwidth {
+	top: 0;
+	bottom: 0;
+	width: 5px;
+	cursor: col-resize
+}
+
+#tabs-container.left #tabs .fullheight:active,#tabs-container.left #tabs .fullwidth:active,#tabs-container.right #tabs .fullheight:active,#tabs-container.right #tabs .fullwidth:active {
+	width: 200px;
+	min-width: 200px
+}
+
+#tabs-container.left #tabs .fullheight,#tabs-container.left #tabs .fullwidth {
+	right: -3px
+}
+
+#tabs-container.left #tabs .fullheight:active,#tabs-container.left #tabs .fullwidth:active {
+	right: -103px
+}
+
+#tabs-container.right #tabs .fullheight,#tabs-container.right #tabs .fullwidth {
+	left: -3px
+}
+
+#tabs-container.right #tabs .fullheight:active,#tabs-container.right #tabs .fullwidth:active {
+	left: -103px
 }
 
 #tabs-container {
 	display: flex;
-	flex: 1;
 	border-style: solid;
 	border-width: 0;
 	border-color: #464646
@@ -2338,13 +2196,13 @@ html {
 }
 
 .linux #tabs-container.top #tabs,.win #tabs-container.top #tabs {
-	padding-left: 38px;
-	padding-right: 100px
+	margin-left: 34px;
+	margin-right: 100px
 }
 
 .mac #tabs-container.top #tabs {
 	margin-top: 1px;
-	padding-left: 70px
+	margin-left: 70px
 }
 
 #tabs-container.bottom {
@@ -2371,27 +2229,15 @@ html {
 	margin-bottom: 2px
 }
 
-#tabs-container.bottom #tabs .fullwidth {
-	position: absolute;
-	bottom: auto;
-	top: -3px
-}
-
-#tabs-container.bottom #tabs .fullwidth:active {
-	top: -100px
-}
-
 #tabs-container.bottom #tabs .newtab,#tabs-container.bottom #tabs .toggle-trash {
 	margin: 0 0 auto
 }
 
 #tabs-container.left,#tabs-container.right {
-	flex: 0 0 180px;
 	margin: 0
 }
 
 #tabs-container.left #tabs,#tabs-container.right #tabs {
-	height: auto!important;
 	max-height: 100%;
 	flex-direction: column;
 	margin: 0;
@@ -2399,8 +2245,8 @@ html {
 }
 
 #tabs-container.left #tabs .tab,#tabs-container.right #tabs .tab {
-	flex: 1 1 auto;
-	height: 150px;
+	flex: 0 1 auto;
+	min-height: 30px;
 	max-height: 150px;
 	margin: 0
 }
@@ -2432,7 +2278,7 @@ html {
 	margin-right: auto
 }
 
-#tabs-container.left .fullheight,#tabs-container.left .pullie,#tabs-container.right .fullheight,#tabs-container.right .pullie {
+#tabs-container.left .pullie,#tabs-container.right .pullie {
 	display: none
 }
 
@@ -2448,24 +2294,24 @@ html {
 	bottom: 0
 }
 
-#tabs.tab-stacking-tooltip .tab {
+.stacks-on #tabs .tab {
 	position: relative
 }
 
-#tabs.tab-stacking-tooltip .tab .tab-group-indicator {
+.stacks-on #tabs .tab .tab-group-indicator {
 	position: absolute;
 	transform-origin: 50% 100%;
-	left: 5%;
-	right: 5%
+	left: -1px;
+	right: 0
 }
 
-#tabs.tab-stacking-tooltip .tab .tab-group-indicator>span {
+.stacks-on #tabs .tab .tab-group-indicator>span {
 	display: flex;
 	height: 100%;
 	width: 100%
 }
 
-#tabs.tab-stacking-tooltip .tab .tab-group-indicator .tab-indicator {
+.stacks-on #tabs .tab .tab-group-indicator .tab-indicator {
 	flex: 1 1 100%;
 	height: 9px;
 	margin-left: 1px;
@@ -2476,11 +2322,11 @@ html {
 	background-color: #b6b6b6
 }
 
-#tabs.tab-stacking-tooltip .tab .tab-group-indicator .tab-indicator.unread {
+.stacks-on #tabs .tab .tab-group-indicator .tab-indicator.unread {
 	background-color: #fff
 }
 
-#tabs.tab-stacking-tooltip .tab .tab-group-indicator .tab-indicator.unread::after {
+.stacks-on #tabs .tab .tab-group-indicator .tab-indicator.unread::after {
 	pointer-events: none;
 	outline: rgba(0,0,0,.4) solid 1px;
 	outline-offset: -1px;
@@ -2491,37 +2337,37 @@ html {
 	top: 0
 }
 
-.isblurred #tabs.tab-stacking-tooltip .tab .tab-group-indicator .tab-indicator.unread::after {
+.isblurred .stacks-on #tabs .tab .tab-group-indicator .tab-indicator.unread::after {
 	outline-color: #b6b6b6
 }
 
-#tabs.tab-stacking-tooltip .tab .tab-group-indicator .tab-indicator.active {
+.stacks-on #tabs .tab .tab-group-indicator .tab-indicator.active {
 	background-color: #909090;
 	transition: none
 }
 
-#tabs.tab-stacking-tooltip .tab .tab-group-indicator .tab-indicator:hover {
+.stacks-on #tabs .tab .tab-group-indicator .tab-indicator:hover {
 	background-color: #777;
 	transition: none
 }
 
-#tabs-container.top #tabs.tab-stacking-tooltip .tab .tab-group-indicator {
+#tabs-container.top .stacks-on #tabs .tab .tab-group-indicator {
 	top: 30px
 }
 
-#tabs.tab-stacking-tooltip .tab.active .tab-group-indicator .tab-indicator.active {
+.stacks-on #tabs .tab.active .tab-group-indicator .tab-indicator.active {
 	background-color: #464646
 }
 
-#tabs-container.left #tabs.tab-stacking-tooltip .tab.tab-group:not(.pinned) .tab-group-indicator,#tabs-container.right #tabs.tab-stacking-tooltip .tab.tab-group:not(.pinned) .tab-group-indicator,#tabs-container.top #tabs.tab-stacking-tooltip .tab.tab-group:not(.pinned) .tab-group-indicator {
+.stacks-on.tabs-left #tabs .tab-group-indicator,.stacks-on.tabs-right #tabs .tab-group-indicator,.stacks-on.tabs-top #tabs .tab-group-indicator {
 	top: -7px
 }
 
-#tabs-container.bottom #tabs.tab-stacking-tooltip .tab.tab-group:not(.pinned) .tab-group-indicator {
+.stacks-on.tabs-bottom #tabs .tab-group-indicator {
 	bottom: -7px
 }
 
-#tabs-container.left #tabs.tab-stacking-tooltip .tab.tab-group:not(.pinned),#tabs-container.right #tabs.tab-stacking-tooltip .tab.tab-group:not(.pinned) {
+.stacks-on.tabs-left #tabs .tab-group-indicator,.stacks-on.tabs-right #tabs .tab-group-indicator {
 	margin-top: 7px
 }
 
@@ -2754,23 +2600,33 @@ html {
 	text-overflow: ellipsis
 }
 
+.mac+div .tooltip .tooltip-item .thumbnail-text {
+	padding-left: 24px;
+	padding-right: 0
+}
+
 .tooltip .tooltip-item .close {
 	position: absolute;
 	bottom: 6px;
 	right: 3px
 }
 
+.mac+div .tooltip .tooltip-item .close {
+	left: 6px;
+	right: auto
+}
+
+.mac+div .tooltip .tab-solo .tooltip-item .thumbnail-text {
+	padding-left: 0
+}
+
 .tooltip .tab-solo .tooltip-item .close {
-	display: none
+	display: none;
+	left: 0
 }
 
-.tooltip .tab-group .tooltip-item:hover:not(.last-active) {
-	background-color: #f6f6f6;
-	z-index: 1
-}
-
-.tooltip .tab-group .tooltip-item:active:not(.last-active) {
-	background-color: #e9e9e9
+.tooltip .tab-group .tooltip-item:active,.tooltip .tab-group .tooltip-item:hover {
+	background-color: #e4e4e4
 }
 
 #panels-container {
@@ -2859,11 +2715,18 @@ html {
 	height: 34px;
 	border: 0;
 	background-color: transparent;
-	background-size: 26px;
-	background-position: 50% 50%;
-	background-repeat: no-repeat;
 	box-shadow: none;
-	position: relative
+	position: relative;
+	padding-left: 0;
+	padding-right: 0;
+	padding-bottom: 0
+}
+
+#switch button svg {
+	fill: rgba(255,255,255,.5);
+	width: 26px;
+	height: auto;
+	transition: transform .2s
 }
 
 #switch button:focus:not(.active),#switch button:hover:not(:disabled):not(.active) {
@@ -2872,6 +2735,11 @@ html {
 
 #switch button:active:not(:disabled):not(.active) {
 	background-color: rgba(0,0,0,.3)
+}
+
+#switch button:active:not(:disabled):not(.active) svg {
+	transform: scale(0.9);
+	transition-duration: 0
 }
 
 #switch button.active {
@@ -2909,34 +2777,11 @@ html {
 
 #switch button.preferences {
 	order: 100;
-	margin-top: auto;
-	background-image: url(/resources/cog.png)
+	margin-top: auto
 }
 
-@media (-webkit-min-device-pixel-ratio:2) {
-	#switch button.preferences {
-		background-image: url(/resources/cog@2x.png)
-	}
-}
-
-#switch button.bookmarks {
-	background-image: url(/resources/panel-bookmarks-regular.png)
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	#switch button.bookmarks {
-		background-image: url(/resources/panel-bookmarks-regular@2x.png)
-	}
-}
-
-#switch button.bookmarks.active {
-	background-image: url(/resources/panel-bookmarks-active.png)
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	#switch button.bookmarks.active {
-		background-image: url(/resources/panel-bookmarks-active@2x.png)
-	}
+#switch button.bookmarks.active svg {
+	fill: rgba(0,0,0,.6)
 }
 
 #switch button.speeddials {
@@ -2949,79 +2794,20 @@ html {
 	}
 }
 
-#switch button.contacts {
-	background-image: url(/resources/panel-contacts-regular.png)
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	#switch button.contacts {
-		background-image: url(/resources/panel-contacts-regular@2x.png)
-	}
-}
-
-#switch button.contacts.active {
-	background-image: url(/resources/panel-contacts-active.png)
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	#switch button.contacts.active {
-		background-image: url(/resources/panel-contacts-active@2x.png)
-	}
-}
-
-#switch button.mail {
-	background-image: url(/resources/panel-mail-regular.png)
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	#switch button.mail {
-		background-image: url(/resources/panel-mail-regular@2x.png)
-	}
-}
-
-#switch button.mail.active {
-	background-image: url(/resources/panel-mail-active.png)
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	#switch button.mail.active {
-		background-image: url(/resources/panel-mail-active@2x.png)
-	}
+#switch button.contacts.active svg,#switch button.mail.active svg {
+	fill: rgba(0,0,0,.6)
 }
 
 #switch button.mail.active div.itemcounter {
 	border: 1px solid #fff
 }
 
-#switch button.notes {
-	background-image: url(/resources/panel-notes-regular.png)
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	#switch button.notes {
-		background-image: url(/resources/panel-notes-regular@2x.png)
-	}
-}
-
-#switch button.notes.active {
-	background-image: url(/resources/panel-notes-active.png)
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	#switch button.notes.active {
-		background-image: url(/resources/panel-notes-active@2x.png)
-	}
+#switch button.notes.active svg {
+	fill: rgba(0,0,0,.6)
 }
 
 #switch button.downloads {
-	background-image: url(/resources/panel-download-regular.png);
 	position: relative
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	#switch button.downloads {
-		background-image: url(/resources/panel-download-regular@2x.png)
-	}
 }
 
 #switch button.downloads.in-progress div.progress {
@@ -3041,14 +2827,8 @@ html {
 	width: 0
 }
 
-#switch button.downloads.active {
-	background-image: url(/resources/panel-download-active.png)
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	#switch button.downloads.active {
-		background-image: url(/resources/panel-download-active@2x.png)
-	}
+#switch button.downloads.active svg {
+	fill: rgba(0,0,0,.6)
 }
 
 #switch button.downloads.active div.progress {
@@ -3943,9 +3723,9 @@ input[type=search]::-webkit-search-decoration {
 
 input[type=checkbox],input[type=radio] {
 	position: relative;
-	width: 16px;
-	height: 16px;
-	min-height: 16px;
+	width: 18px;
+	height: 18px;
+	min-height: 18px;
 	border-width: 2px;
 	border-color: #b5b7b8
 }
@@ -3954,12 +3734,17 @@ input[type=checkbox]:active:focus:after,input[type=checkbox]:active:focus:before
 	background-color: #006ed7
 }
 
+input[type=checkbox]:disabled,input[type=radio]:disabled {
+	-webkit-filter: grayscale(1);
+	opacity: .6
+}
+
+input[type=checkbox]:disabled+span,input[type=radio]:disabled+span {
+	opacity: .6
+}
+
 input[type=radio] {
-	border-radius: 50%;
-	width: 18px;
-	height: 18px;
-	min-height: 18px;
-	min-width: 18px
+	border-radius: 50%
 }
 
 input[type=radio]:before {
@@ -4011,6 +3796,31 @@ input[type=checkbox]:after {
 input[type=checkbox]:checked:after,input[type=checkbox]:checked:before {
 	opacity: 1;
 	transition: opacity 0
+}
+
+button.secondlevel {
+	border: 1px solid #DCDDDE;
+	box-shadow: 0 1px 2px 0 rgba(0,0,0,.1);
+	background-color: #fff;
+	border-radius: 4px;
+	height: 22px
+}
+
+button.secondlevel:hover {
+	color: #111;
+	border: 1px solid #B5B7B8;
+	box-shadow: 0 1px 2px 0 rgba(0,0,0,.1)
+}
+
+button.secondlevel .active,button.secondlevel:active {
+	border: 1px solid #999;
+	background-color: #f6f6f6;
+	box-shadow: 0 1px 2px 0 transparent
+}
+
+button.secondlevel:disabled {
+	opacity: .5;
+	border-color: #b5b7b8
 }
 
 input[type=button],input[type=submit] {
@@ -4123,7 +3933,7 @@ select {
 	background: 50% 0/cover no-repeat #f6f6f6;
 	border-top-left-radius: 2px;
 	border-top-right-radius: 2px;
-	border-bottom: 6px solid #ef3939
+	border-bottom: 4px solid #ef3939
 }
 
 .cb-form-row {
@@ -4738,20 +4548,18 @@ select {
 .dials .dial {
 	display: inline-block;
 	outline: 0;
-	color: #000;
 	text-align: center;
 	transition: top 200ms linear,left 200ms linear
 }
 
 .dials .dial .dial-image {
 	display: block;
-	box-shadow: 0 1px 6px rgba(0,0,0,.25),0 0 0 1px rgba(0,0,0,.1);
+	box-shadow: 0 1px 6px rgba(0,0,0,.15),0 0 0 1px rgba(0,0,0,.05);
 	margin-bottom: 6px;
 	height: 100%;
 	width: 100%;
 	min-height: 70px;
 	min-width: 86px;
-	background-color: rgba(0,0,0,.7);
 	background-size: cover;
 	background-position: 50% 0;
 	position: relative;
@@ -4799,10 +4607,7 @@ select {
 .dials .dial .button-title {
 	display: inline-block;
 	max-width: 100%;
-	color: #fff;
 	opacity: 1;
-	text-shadow: 0 1px 2px rgba(0,0,0,.7);
-	background-color: rgba(0,0,0,.5);
 	padding: 3px 12px;
 	border-radius: 12px;
 	border-width: 0;
@@ -4814,7 +4619,6 @@ select {
 }
 
 .dials .dial .close {
-	box-shadow: 0 0 0 1px rgba(255,255,255,.1);
 	position: absolute;
 	top: 6px;
 	right: 6px;
@@ -4840,7 +4644,6 @@ select {
 	width: 18px;
 	height: 18px;
 	color: transparent;
-	box-shadow: 0 0 0 1px rgba(255,255,255,.1);
 	opacity: 0;
 	transition: opacity 50ms;
 	overflow: hidden;
@@ -4876,18 +4679,9 @@ select {
 }
 
 .dials .dial.folder .dial-image {
-	background-image: url(/resources/folder_speeddial.png)!important;
-	background-color: rgba(0,0,0,.7);
 	background-size: 100px 80px;
 	background-repeat: no-repeat;
-	background-position: 50%;
-	image-rendering: -webkit-optimize-contrast
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	.dials .dial.folder .dial-image {
-		background-image: url(/resources/folder_speeddial@2x.png)
-	}
+	background-position: 50%
 }
 
 .dials .dial.folder .dial-image .dial-folder-title {
@@ -4927,14 +4721,10 @@ select {
 	height: 186px
 }
 
-.dials .dial:hover .button-title {
-	background-color: rgba(0,0,0,.9)
-}
-
 .dials .dial:hover .dial-image {
 	transition: 0;
 	transform: scale(1.02);
-	box-shadow: 0 4px 6px rgba(0,0,0,.4),0 0 0 1px rgba(0,0,0,.3)
+	box-shadow: 0 4px 6px rgba(0,0,0,.12),0 0 0 1px rgba(0,0,0,.12)
 }
 
 .dials .dial:hover .close,.dials .dial:hover .update-thumbnail {
@@ -4963,7 +4753,7 @@ select {
 .dials .dial.clicked .dial-image {
 	transition: 1;
 	transform: scale(1.01);
-	box-shadow: 0 4px 6px rgba(0,0,0,.4),0 0 0 1px rgba(0,0,0,.3)
+	box-shadow: 0 4px 6px rgba(0,0,0,.12),0 0 0 1px rgba(0,0,0,.12)
 }
 
 .dials .dial:focus .dial-image {
@@ -5029,7 +4819,7 @@ select {
 }
 
 .speeddial {
-	margin: 50px auto 0;
+	margin: 70px auto 0;
 	width: 1470px;
 	transition: transform 150ms cubic-bezier(0,0,.25,1),opacity 150ms cubic-bezier(0,0,.25,1),width 150ms cubic-bezier(0,0,.25,1);
 	transform-origin: 50% 400px
@@ -5055,10 +4845,6 @@ select {
 .speeddial .dial.add .dial-image:after {
 	opacity: .8;
 	image-rendering: -webkit-optimize-contrast
-}
-
-.speeddial .dial.add:active .dial-image {
-	background-color: rgba(0,0,0,.87)
 }
 
 .speeddial .dial.add.active .dial-image:after {
@@ -6168,10 +5954,8 @@ select {
 
 .button-startpage {
 	min-height: 30px;
-	background-color: rgba(255,255,255,.5);
-	color: rgba(0,0,0,.8);
 	padding: 6px 12px;
-	box-shadow: inset 0 -2px 0 0 rgba(0,0,0,.12);
+	box-shadow: inset 0 -2px rgba(102,102,102,.2);
 	border: 0 solid rgba(239,57,57,0);
 	-webkit-user-select: none;
 	max-width: 16em;
@@ -6180,14 +5964,20 @@ select {
 	text-overflow: ellipsis
 }
 
+.button-startpage svg {
+	width: 18px;
+	height: 18px;
+	padding: 0;
+	margin: 0
+}
+
 .button-startpage:first-of-type {
 	padding-left: 15px
 }
 
 .button-startpage:last-of-type {
 	margin-right: 0;
-	padding-right: 15px;
-	box-shadow: inset 0 -2px 0 0 rgba(0,0,0,.12),inset -1px 0 0 0 rgba(0,0,0,.05)
+	padding-right: 15px
 }
 
 .button-startpage.up {
@@ -6200,15 +5990,14 @@ select {
 .button-startpage.up:before {
 	content: "";
 	position: absolute;
-	width: 12px;
+	width: 26px;
 	height: 12px;
 	top: 9px;
-	left: 10px;
+	left: 4px;
 	background-image: url(/resources/chevron-left.png);
 	background-repeat: no-repeat;
-	background-position: 0 0;
-	background-size: 12px;
-	transform: rotate(90deg)
+	background-position: 50%;
+	background-size: 26px
 }
 
 @media (-webkit-min-device-pixel-ratio:2) {
@@ -6217,41 +6006,13 @@ select {
 	}
 }
 
-.button-startpage.add-set {
-	background-image: url(/resources/startpage_add_icon.png);
-	background-repeat: no-repeat;
-	background-position: 19px;
-	background-size: 18px;
-	box-shadow: inset 0 -2px 0 0 rgba(0,0,0,.12),inset -1px 0 0 0 rgba(0,0,0,.05);
-	padding-right: 42px
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	.button-startpage.add-set {
-		background-image: url(/resources/startpage_add_icon@2x.png)
-	}
-}
-
 span+.button-startpage.add-set {
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0
 }
 
-.button-startpage.add-set.active,.button-startpage.add-set:focus {
-	box-shadow: inset 0 -2px 0 0 #006ed7,inset -1px 0 0 0 rgba(0,0,0,.05)
-}
-
-.button-startpage:hover:not([disabled]) {
-	background-color: #fff
-}
-
 .button-startpage.active,.button-startpage:focus {
-	background-color: #fff;
-	box-shadow: inset 0 -2px 0 0 #006ed7,inset -1px 0 0 0 rgba(0,0,0,.05)
-}
-
-.button-startpage:active:not(.active) {
-	background-color: rgba(255,255,255,.8)
+	box-shadow: inset 0 -2px 0 0 #006ed7
 }
 
 .startpage-navigation-group span {
@@ -6279,7 +6040,8 @@ span+.button-startpage.add-set {
 	width: 100%;
 	background-color: transparent;
 	text-align: center;
-	color: #006ed7
+	color: #006ed7;
+	text-shadow: none!important
 }
 
 .startpage-navigation-group span.edit input ::selection {
@@ -6296,15 +6058,194 @@ span+.button-startpage.add-set {
 	flex: 1;
 	-webkit-user-select: none;
 	overflow: hidden;
-	background-image: url(../resources/bg.jpg);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: top;
+	background-position: 50% 50%;
 	position: absolute;
 	top: 0;
 	left: 0;
 	right: 0;
-	bottom: 0
+	bottom: 0;
+	transition: .2s
+}
+
+.startpage.fg-light .dials,.startpage.fg-light .startpage-navigation {
+	color: #666
+}
+
+.startpage.fg-light .dial-image svg {
+	margin-top: 48px;
+	width: 100px;
+	height: 79px
+}
+
+.startpage.fg-light .dial-image svg .stop1,.startpage.fg-light .dial-image svg .stop2 {
+	stop-color: #FFF
+}
+
+.startpage.fg-light .dial-image svg .stop3,.startpage.fg-light .dial-image svg .stop4 {
+	stop-color: #F8F8F8
+}
+
+.startpage.fg-light .dial-image svg #folder-tab-color {
+	fill: #006ed7
+}
+
+.startpage.fg-light .dial .dial-image {
+	background-color: rgba(255,255,255,.5)
+}
+
+.startpage.fg-light .dial:active .dial-image {
+	background-color: rgba(255,255,255,.87)
+}
+
+.startpage.fg-light .button-startpage {
+	background-color: rgba(255,255,255,.4);
+	box-shadow: inset 0 -2px rgba(102,102,102,.1)
+}
+
+.startpage.fg-light .button-startpage:hover {
+	background-color: rgba(255,255,255,.8);
+	box-shadow: inset 0 -2px #006ed7
+}
+
+.startpage.fg-light .button-startpage.active,.startpage.fg-light .button-startpage:focus {
+	color: #006ed7;
+	background-color: transparent;
+	box-shadow: inset 0 -2px #006ed7
+}
+
+.startpage.fg-light .button-startpage.add-set {
+	box-shadow: inset 0 -2px 0 0 rgba(102,102,102,.1),inset 1px 0 0 0 rgba(0,0,0,.05),inset -1px 0 0 0 rgba(0,0,0,.05)
+}
+
+.startpage.fg-light .button-startpage.add-set:hover {
+	box-shadow: inset 0 -2px 0 0 #006ed7,inset 1px 0 0 0 rgba(0,0,0,.05),inset -1px 0 0 0 rgba(0,0,0,.05)
+}
+
+.startpage.fg-light .button-startpage.up {
+	box-shadow: none
+}
+
+.startpage.fg-light .button-startpage.up:before {
+	background-image: url(/resources/chevron-left.png)
+}
+
+@media (-webkit-min-device-pixel-ratio:2) {
+	.startpage.fg-light .button-startpage.up:before {
+		background-image: url(/resources/chevron-left@2x.png)
+	}
+}
+
+.startpage.fg-light .button-startpage.up:hover {
+	box-shadow: none;
+	background-color: rgba(255,255,255,.5)
+}
+
+.startpage.fg-light .button-startpage.disabled {
+	color: rgba(0,0,0,.7);
+	box-shadow: none
+}
+
+.startpage.fg-light .button-startpage.disabled:hover {
+	background-color: rgba(255,255,255,.4)
+}
+
+.startpage.fg-light .button-title {
+	background-color: rgba(255,255,255,.5);
+	color: #111
+}
+
+.startpage.fg-light .startpage-navigation {
+	background-color: #fff
+}
+
+.startpage.fg-dark .dials,.startpage.fg-dark .startpage-navigation {
+	color: #999
+}
+
+.startpage.fg-dark .startpage-navigation {
+	box-shadow: inset 0 -2px rgba(0,0,0,.5)
+}
+
+.startpage.fg-dark .dial-image svg {
+	margin-top: 48px;
+	width: 100px;
+	height: 79px
+}
+
+.startpage.fg-dark .dial-image svg .stop1,.startpage.fg-dark .dial-image svg .stop2 {
+	stop-color: #303030
+}
+
+.startpage.fg-dark .dial-image svg .stop3,.startpage.fg-dark .dial-image svg .stop4 {
+	stop-color: #363636
+}
+
+.startpage.fg-dark .dial-image svg #folder-tab-color {
+	fill: #006ed7
+}
+
+.startpage.fg-dark .dial .dial-image {
+	background-color: rgba(0,0,0,.5)
+}
+
+.startpage.fg-dark .dial:active .dial-image {
+	background-color: rgba(0,0,0,.87)
+}
+
+.startpage.fg-dark .button-startpage,.startpage.fg-dark .startpage-navigation {
+	background-color: #1f262a
+}
+
+.startpage.fg-dark .button-title {
+	background-color: rgba(0,0,0,.5);
+	color: #f6f6f6
+}
+
+.startpage.fg-dark .button-startpage {
+	box-shadow: inset 0 -2px rgba(0,0,0,.65)
+}
+
+.startpage.fg-dark .button-startpage:hover:not([disabled]) {
+	box-shadow: inset 0 -2px #006ed7
+}
+
+.startpage.fg-dark .button-startpage.active,.startpage.fg-dark .button-startpage:focus {
+	color: #fff;
+	background-color: transparent;
+	box-shadow: inset 0 -2px #006ed7
+}
+
+.startpage.fg-dark .button-startpage.add-set {
+	box-shadow: inset 0 -2px 0 0 rgba(0,0,0,.5),inset 1px 0 0 0 rgba(255,255,255,.07),inset -1px 0 0 0 rgba(255,255,255,.07)
+}
+
+.startpage.fg-dark .button-startpage.add-set:hover {
+	box-shadow: inset 0 -2px 0 0 #006ed7,inset 1px 0 0 0 rgba(255,255,255,.07),inset -1px 0 0 0 rgba(255,255,255,.07)
+}
+
+.startpage.fg-dark .button-startpage.up {
+	box-shadow: none
+}
+
+.startpage.fg-dark .button-startpage.up:before {
+	background-image: url(/resources/chevron-left.png);
+	-webkit-filter: invert(100%)
+}
+
+@media (-webkit-min-device-pixel-ratio:2) {
+	.startpage.fg-dark .button-startpage.up:before {
+		background-image: url(/resources/chevron-left@2x.png)
+	}
+}
+
+.startpage.fg-dark .button-startpage.up:hover {
+	box-shadow: none;
+	background-color: rgba(0,0,0,.5)
+}
+
+.startpage.fg-dark .button-startpage.disabled {
+	color: #fff;
+	box-shadow: none
 }
 
 .startpage .startpage-content {
@@ -6472,8 +6413,7 @@ span+.button-startpage.add-set {
 	display: flex;
 	justify-content: center;
 	min-height: 50px;
-	background-color: rgba(255,255,255,.5);
-	box-shadow: inset 0 -2px 0 0 rgba(0,0,0,.1)
+	box-shadow: inset 0 -2px rgba(102,102,102,.2)
 }
 
 .startpage .startpage-navigation:after {
@@ -6508,20 +6448,15 @@ span+.button-startpage.add-set {
 
 .startpage .startpage-folder-navigation {
 	position: absolute;
-	top: -40px;
+	top: -70px;
 	width: 100%;
 	text-align: center
 }
 
 .startpage .startpage-folder-navigation button {
-	border-radius: 16px;
+	border-radius: 0 0 3px 3px;
 	box-shadow: none;
-	background-color: rgba(0,0,0,.5);
-	color: #fff
-}
-
-.startpage .startpage-folder-navigation button:hover {
-	background-color: rgba(0,0,0,.9)
+	background-color: rgba(0,0,0,.5)
 }
 
 .startpage #background-image {
@@ -6535,7 +6470,6 @@ span+.button-startpage.add-set {
 .vivaldi-settings {
 	height: 100%;
 	display: flex;
-	flex-flow: row;
 	position: relative
 }
 
@@ -6555,6 +6489,11 @@ span+.button-startpage.add-set {
 }
 
 .vivaldi-settings .settings-header {
+	display: none
+}
+
+.popup .vivaldi-settings .settings-header {
+	display: block;
 	position: fixed;
 	z-index: 10;
 	top: 0;
@@ -6590,14 +6529,6 @@ span+.button-startpage.add-set {
 	background-position: 100% 0
 }
 
-.noquery.vivaldi-settings .settings-navigation {
-	border: none;
-	margin: 0;
-	padding: 0;
-	width: 100%;
-	flex-flow: column
-}
-
 .vivaldi-settings .settings-navigation .settings-navigation-header {
 	padding: 12px
 }
@@ -6606,157 +6537,189 @@ span+.button-startpage.add-set {
 	width: 100%
 }
 
-.vivaldi-settings .settings-navigation>button {
-	flex: 0 1 60px;
+.vivaldi-settings .settings-navigation section {
+	display: flex;
+	flex-flow: column;
+	flex: 1
+}
+
+.vivaldi-settings .settings-navigation button {
+	flex: 0 1 46px;
 	position: relative;
-	padding-top: 6px;
-	padding-left: 60px;
-	background: 18px 50%/32px no-repeat rgba(246,246,246,0);
-	border: 0 solid #eeefef;
-	border-top-width: 1px;
+	padding-top: 2px;
+	padding-left: 12px;
+	padding-bottom: 0;
+	background: 12px 50%/24px no-repeat rgba(246,246,246,0);
+	border: 1px solid transparent;
+	border-top-color: #eeefef;
+	border-right-width: 0;
 	text-align: left;
 	word-break: break-word;
-	transition: all .2s;
 	box-shadow: none
 }
 
-.vivaldi-settings .settings-navigation>button:after,.vivaldi-settings .settings-navigation>button:before {
+.vivaldi-settings .settings-navigation button svg {
+	width: 24px;
+	height: auto;
+	position: absolute;
+	top: 10px;
+	fill: rgba(31,38,42,.4)
+}
+
+.vivaldi-settings .settings-navigation button span:not(svg) {
+	margin-right: 40px
+}
+
+.vivaldi-settings .settings-navigation button:after,.vivaldi-settings .settings-navigation button:before {
 	content: "";
 	position: absolute;
 	width: 1px;
 	right: 0;
 	height: 51%;
 	background: #dcddde;
-	transition: .3s cubic-bezier(0,0,.25,1)
+	transition: .2s cubic-bezier(0,0,.25,1)
 }
 
-.vivaldi-settings .settings-navigation>button:before {
+.vivaldi-settings .settings-navigation button:before {
 	top: -1px;
 	transform-origin: 50% 0
 }
 
-.vivaldi-settings .settings-navigation>button:after {
+.vivaldi-settings .settings-navigation button:after {
 	height: 52%;
 	bottom: -1px;
 	transform-origin: 50% 100%
 }
 
-.vivaldi-settings .settings-navigation>button:focus,.vivaldi-settings .settings-navigation>button:hover {
+.vivaldi-settings .settings-navigation button:focus,.vivaldi-settings .settings-navigation button:hover {
 	transition-duration: 0;
 	background-color: rgba(31,38,42,.02)
 }
 
-.vivaldi-settings .settings-navigation>button:active {
+.vivaldi-settings .settings-navigation button:active {
 	transition-duration: 0;
 	background-color: rgba(243,243,243,.8);
 	border-color: #e7e7e7
 }
 
-.vivaldi-settings .settings-navigation>button:active+button {
+.vivaldi-settings .settings-navigation button:active+button {
 	border-top-color: #e7e7e7
 }
 
-.vivaldi-settings .settings-navigation>button:active:after,.vivaldi-settings .settings-navigation>button:active:before {
+.vivaldi-settings .settings-navigation button:active:after,.vivaldi-settings .settings-navigation button:active:before {
 	transform: scale(0.65);
 	transition-duration: .15s
 }
 
-.vivaldi-settings .settings-navigation>button:last-of-type {
+.vivaldi-settings .settings-navigation button:last-of-type {
 	border-bottom-width: 1px
 }
 
-.vivaldi-settings .settings-navigation>button.on {
+.vivaldi-settings .settings-navigation button.on {
 	z-index: 1;
 	background-color: #f6f6f6;
 	border-color: #dcddde!important;
 	box-shadow: 0 2px rgba(220,221,222,.15),0 3px rgba(220,221,222,.1)
 }
 
-.vivaldi-settings .settings-navigation>button.on+button {
+.vivaldi-settings .settings-navigation button.on+button {
 	border-top-color: #dcddde!important
 }
 
-.vivaldi-settings .settings-navigation>button.on:after,.vivaldi-settings .settings-navigation>button.on:before {
+.vivaldi-settings .settings-navigation button.on:after,.vivaldi-settings .settings-navigation button.on:before {
 	transform: scaleY(0)
 }
 
-.vivaldi-settings .settings-navigation>button.pencil {
-	background-image: url(/resources/pref-general.png)
+.vivaldi-settings .settings-navigation button.on svg {
+	fill: #006ed7
+}
+
+.vivaldi-settings.initial:after {
+	content: initial
+}
+
+.vivaldi-settings.initial .settings-navigation {
+	background-color: #f6f6f6;
+	border: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	flex: 1
+}
+
+.vivaldi-settings.initial .settings-navigation-header {
+	border-bottom: 1px solid #dcddde;
+	display: flex
+}
+
+.vivaldi-settings.initial .settings-search {
+	max-width: 256px;
+	margin: 0 auto;
+	width: 100%
+}
+
+.vivaldi-settings.initial section {
+	padding: 3px 12px;
+	flex-flow: row wrap;
+	flex: 1;
+	overflow-y: auto;
+	justify-content: left;
+	align-content: flex-start
+}
+
+.vivaldi-settings.initial button {
+	background-size: 32px;
+	flex: 0 0 100px;
+	padding: 54px 0 18px;
+	text-align: center;
+	height: 90px;
+	background-position: 50% 18px;
+	border: 1px solid transparent
+}
+
+.vivaldi-settings.initial button:focus {
+	border: 1px solid #006ed7;
+	box-shadow: 0 0 0 2px rgba(128,182,235,0),0 0 0 3px rgba(0,110,215,.3)
+}
+
+.vivaldi-settings.initial button:after,.vivaldi-settings.initial button:before {
+	content: initial
+}
+
+.vivaldi-settings .clearkey,.vivaldi-settings .restorekey {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	padding: 0;
+	margin: 0 0 0 6px;
+	background-color: #bbb;
+	background-repeat: no-repeat;
+	background-position: 50% 50%
+}
+
+.vivaldi-settings .clearkey:hover,.vivaldi-settings .restorekey:hover {
+	transform: scale(1.25)
+}
+
+.vivaldi-settings .clearkey {
+	background-image: url(/resources/close-white.png);
+	background-size: 8px 8px
 }
 
 @media (-webkit-min-device-pixel-ratio:2) {
-	.vivaldi-settings .settings-navigation>button.pencil {
-		background-image: url(/resources/pref-general@2x.png)
+	.vivaldi-settings .clearkey {
+		background-image: url(/resources/close-white@2x.png)
 	}
 }
 
-.vivaldi-settings .settings-navigation>button.appearance {
-	background-image: url(/resources/pref-appearance.png)
+.vivaldi-settings .restorekey {
+	background-image: url(/resources/symbol-reload.png);
+	background-size: 14px 14px
 }
 
 @media (-webkit-min-device-pixel-ratio:2) {
-	.vivaldi-settings .settings-navigation>button.appearance {
-		background-image: url(/resources/pref-appearance@2x.png)
-	}
-}
-
-.vivaldi-settings .settings-navigation>button.compass {
-	background-image: url(/resources/pref-navigation.png)
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	.vivaldi-settings .settings-navigation>button.compass {
-		background-image: url(/resources/pref-navigation@2x.png)
-	}
-}
-
-.vivaldi-settings .settings-navigation>button.network {
-	background-image: url(/resources/pref-network.png)
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	.vivaldi-settings .settings-navigation>button.network {
-		background-image: url(/resources/pref-network@2x.png)
-	}
-}
-
-.vivaldi-settings .settings-navigation>button.privacy {
-	background-image: url(/resources/pref-privacy.png)
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	.vivaldi-settings .settings-navigation>button.privacy {
-		background-image: url(/resources/pref-privacy@2x.png)
-	}
-}
-
-.vivaldi-settings .settings-navigation>button.mail {
-	background-image: url(/resources/pref-mail.png)
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	.vivaldi-settings .settings-navigation>button.mail {
-		background-image: url(/resources/pref-mail@2x.png)
-	}
-}
-
-.vivaldi-settings .settings-navigation>button.displayall {
-	background-image: url(/resources/pref-displayall.png)
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	.vivaldi-settings .settings-navigation>button.displayall {
-		background-image: url(/resources/pref-displayall@2x.png)
-	}
-}
-
-.vivaldi-settings .settings-navigation>button.downloads {
-	background-image: url(/resources/pref-download.png)
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	.vivaldi-settings .settings-navigation>button.downloads {
-		background-image: url(/resources/pref-download@2x.png)
+	.vivaldi-settings .restorekey {
+		background-image: url(/resources/symbol-reload@2x.png)
 	}
 }
 
@@ -6899,6 +6862,20 @@ span+.button-startpage.add-set {
 	font-weight: 700
 }
 
+.vivaldi-settings #zoom_control>span {
+	display: flex;
+	align-items: baseline
+}
+
+.vivaldi-settings #zoom_control input[type=range] {
+	margin: auto 1ex
+}
+
+.vivaldi-settings #zoom_control input[type=range]::-webkit-slider-thumb {
+	width: 16px;
+	height: 16px
+}
+
 .vivaldi-settings .setting-section .setting-group.setting-mail-account {
 	border-bottom: 1px solid #eeefef;
 	padding-bottom: 12px
@@ -6957,41 +6934,7 @@ span+.button-startpage.add-set {
 }
 
 .keystrokes .setting-keycombo .clearkey,.keystrokes .setting-keycombo .restorekey {
-	width: 20px;
-	height: 20px;
-	border-radius: 50%;
-	padding: 0;
-	margin: 0 0 0 6px;
-	background-color: #bbb;
-	background-repeat: no-repeat;
-	background-position: 50% 50%;
 	opacity: 0
-}
-
-.keystrokes .setting-keycombo .clearkey:hover,.keystrokes .setting-keycombo .restorekey:hover {
-	transform: scale(1.25)
-}
-
-.keystrokes .setting-keycombo .clearkey {
-	background-image: url(/resources/close-white.png);
-	background-size: 8px 8px
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	.keystrokes .setting-keycombo .clearkey {
-		background-image: url(/resources/close-white@2x.png)
-	}
-}
-
-.keystrokes .setting-keycombo .restorekey {
-	background-image: url(/resources/symbol-reload.png);
-	background-size: 14px 14px
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	.keystrokes .setting-keycombo .restorekey {
-		background-image: url(/resources/symbol-reload@2x.png)
-	}
 }
 
 .keystrokes .setting-keycombo .controls:hover .clearkey,.keystrokes .setting-keycombo .controls:hover .restorekey {
@@ -7055,6 +6998,14 @@ span+.button-startpage.add-set {
 	-webkit-user-select: none
 }
 
+.multiinput .item.single {
+	-webkit-animation: pop 200ms ease-in
+}
+
+.singlekeydisabled .multiinput .item.single {
+	display: none
+}
+
 .multiinput input[type=text],.multiinput input[type=text]:focus {
 	outline: 0;
 	border: 0;
@@ -7069,6 +7020,130 @@ span+.button-startpage.add-set {
 .controls.active .multiinput {
 	border-color: #006ed7;
 	box-shadow: 0 0 0 2px rgba(128,182,235,0),0 0 0 3px rgba(0,110,215,.3)
+}
+
+.vivaldi-settings .settings-content .setting-section .setting-group .setting-single.image-radio {
+	display: inline-block;
+	vertical-align: top
+}
+
+.vivaldi-settings .settings-content .setting-section .setting-group .setting-single.image-radio label {
+	display: block;
+	padding: 6px;
+	text-align: center
+}
+
+.vivaldi-settings .settings-content .setting-section .setting-group .setting-single.image-radio label span {
+	display: block;
+	margin-left: 0;
+	padding: 6px
+}
+
+.vivaldi-settings .settings-content .setting-section .setting-group .setting-single.image-radio label .secondlevel {
+	margin: 3px auto -2px;
+	display: none
+}
+
+.vivaldi-settings .settings-content .setting-section .setting-group .setting-single.image-radio.has-secondlevel label input[type=radio]:checked+span {
+	display: none
+}
+
+.vivaldi-settings .settings-content .setting-section .setting-group .setting-single.image-radio.has-secondlevel label input[type=radio]:checked+span+.secondlevel {
+	display: block
+}
+
+.vivaldi-settings .settings-content .setting-section .setting-group .setting-single.image-radio:first-of-type label {
+	padding-left: 0
+}
+
+.vivaldi-settings .settings-content .setting-section .setting-group .setting-single.image-radio input[type=radio] {
+	display: block;
+	height: 80px;
+	width: 100px;
+	border-radius: 4px;
+	background-size: cover
+}
+
+.vivaldi-settings .settings-content .setting-section .setting-group .setting-single.image-radio input[type=radio]:before {
+	top: auto;
+	left: auto;
+	right: 0;
+	bottom: 0;
+	background-color: transparent;
+	border: 20px solid transparent;
+	border-bottom-color: #b5b7b8;
+	border-right-color: #b5b7b8;
+	border-radius: 0 0 2px;
+	transform-origin: 100% 100%
+}
+
+.vivaldi-settings .settings-content .setting-section .setting-group .setting-single.image-radio input[type=radio]:after {
+	content: "";
+	position: absolute;
+	height: 16px;
+	width: 16px;
+	bottom: 4px;
+	right: 4px;
+	background: url(data:image/png;
+	base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAaCAQAAAB8kpa0AAAAYklEQVR4Ae2U1QHAUAwCs89tzoh1d3eF3xz0WW2tQmyLQoXahruxtQHPrZDVeG5+/MdrCgmZxBUy3sOK9tYgG/DcLMdpjy7A+9sW492ILr4+ghVX5rJL245g2y+TTT/tJXgEyEeU5C10LUEAAAAASUVORK5CYII=) 50% 50%/16px 13px no-repeat;transform: scale(0);
+	opacity: 0;
+	transition: .4s
+}
+
+.vivaldi-settings .settings-content .setting-section .setting-group .setting-single.image-radio input[type=radio]:checked:before {
+	border-bottom-color: #006ed7;
+	border-right-color: #006ed7
+}
+
+.vivaldi-settings .settings-content .setting-section .setting-group .setting-single.image-radio input[type=radio]:checked:after {
+	opacity: 1;
+	transform: scale(1)
+}
+
+.vivaldi-settings .settings-content .setting-section .setting-group .setting-single.image-radio input[type=radio].colorpicker {
+	background-image: url(/resources/pref-eyedropper.png);
+	background-position: 50%;
+	background-size: 24px;
+	background-repeat: no-repeat
+}
+
+@media (-webkit-min-device-pixel-ratio:2) {
+	.vivaldi-settings .settings-content .setting-section .setting-group .setting-single.image-radio input[type=radio].colorpicker {
+		background-image: url(/resources/pref-eyedropper@2x.png)
+	}
+}
+
+.setting-single.left {
+	float: left
+}
+
+.gesture-map {
+	max-height: 200px;
+	display: flex
+}
+
+.gesture-map .gesture,.gesture-map .list {
+	flex: 1;
+	border: 1px solid #dcddde;
+	background-color: #fff
+}
+
+.gesture-map .list {
+	margin-right: 6px;
+	overflow-y: auto
+}
+
+.gesture-map .list li {
+	padding: 3px 6px
+}
+
+.gesture-map .list li:active,.gesture-map .list li:focus {
+	color: #fff;
+	background-color: #006ed7
+}
+
+.gesture-map .gesture {
+	margin-left: 6px
 }
 
 .quick-command-container {
@@ -7464,42 +7539,33 @@ span+.button-startpage.add-set {
 	background-position: 50%;
 	border: 0;
 	margin-right: 6px;
-	margin-left: 6px
+	margin-left: 6px;
+	padding: 0
 }
 
 #notes-panel .notes-editor .meta-icon.date {
-	background-image: url(/resources/timestamp-icon.png);
 	background-size: 16px
 }
 
-@media (-webkit-min-device-pixel-ratio:2) {
-	#notes-panel .notes-editor .meta-icon.date {
-		background-image: url(/resources/timestamp-icon@2x.png)
-	}
+#notes-panel .notes-editor .meta-icon.date svg {
+	fill: transparent;
+	stroke: rgba(0,0,0,.3);
+	width: 16px;
+	height: 16px
 }
 
 #notes-panel .notes-editor .meta-icon.url {
-	background-image: url(/resources/link-icon.png);
-	background-size: 16px;
 	margin-right: 0
 }
 
-@media (-webkit-min-device-pixel-ratio:2) {
-	#notes-panel .notes-editor .meta-icon.url {
-		background-image: url(/resources/link-icon@2x.png)
-	}
+#notes-panel .notes-editor .meta-icon.url svg {
+	fill: rgba(0,0,0,.3);
+	width: 16px;
+	height: 16px
 }
 
-#notes-panel .notes-editor .meta-icon.url:hover {
-	background-image: url(/resources/folder_arrow.png);
-	opacity: .5;
-	background-size: 10px
-}
-
-@media (-webkit-min-device-pixel-ratio:2) {
-	#notes-panel .notes-editor .meta-icon.url:hover {
-		background-image: url(/resources/folder_arrow@2x.png)
-	}
+#notes-panel .notes-editor .meta-icon.url:hover svg {
+	fill: rgba(0,0,0,.5)
 }
 
 #notes-panel .notes-editor .note-controls {
@@ -8668,7 +8734,7 @@ span+.button-startpage.add-set {
 
 .vivaldi {
 	position: absolute;
-	top: 0;
+	top: 1px;
 	left: 0;
 	width: 34px;
 	height: 42px;
