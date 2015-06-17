@@ -33,7 +33,11 @@
     background-size:16px !important;
     -webkit-filter: invert(0.6);
     transition: all 0.2s;
+    background-repeat: no-repeat;
 }
 #browser.native .vivaldi:hover{
     -webkit-filter: invert(0.3);
+}
+#browser.native .vivaldi svg{
+    display: none !important;
 }

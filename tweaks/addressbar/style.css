@@ -34,12 +34,24 @@
 .startpage-navigation-group{
     margin-top:5px;
 }
-.startpage-navigation-group>span{
-    background-color: rgba(255,255,255,0.5) !important;
+/*.startpage-navigation-group>*{
+    background-color: rgba(255,255,255,0.3) !important;
 }
-.startpage-navigation-group>span:hover{
+.startpage-navigation-group>*:hover{
+    background-color: rgba(255,255,255,0.8) !important;
+}*/
+.startpage-navigation-group .active{
     background-color: rgba(255,255,255,0.8) !important;
 }
+.startpage-navigation-group *:focus:not(.active){
+    background-color: rgba(255,255,255,0.6) !important;
+}
+/*.startpage-navigation-group>*:first-child{
+    border-radius: 4px 0 0 4px;
+}
+.startpage-navigation-group>*:last-child{
+    border-radius: 0 4px 4px 0;
+}*/
 
 #switch .button-toolbar.back{
     margin-top:30px;
