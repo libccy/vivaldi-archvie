@@ -33,8 +33,14 @@ By default, buttons on the addressbar are moved to the sidebar, hide them like t
 
 ###Cycle tabs
 Cycle through tabs by right-click+mousewheel
+
+Recently used order:
 ````html
 <script src="tweaks/cycle-tabs/main.js"></script>
+````
+Tab order:
+````html
+<script src="tweaks/cycle-tabs/main.js?order=1"></script>
 ````
 ![](/screenshots/cycle-tabs.png?raw=true)
 
