@@ -57,19 +57,3 @@ Move the vivaldi menu to the addressbar when native window is enabled(only teste
 <link rel="stylesheet" href="tweaks/menu/style.css" />
 ````
 ![](/screenshots/menu.png?raw=true)
-
-###Tabs panel
-Turn tab bar into a "panel", which behaves similarly to other panels(only tested on windows).
-````html
-<script src="tweaks/panel-tabs/main.js"></script>
-````
-
-Current issues
-
-* The previous tweak(menu mod) must be enabled
-* Tabs and panels must be set to left
-* Panel width is not adjustable
-* Toggling panels with menu or keyboard shortcuts doesn't work
-* Very likely to be incompatible with future releases
-
-![](/screenshots/panel-tabs.png?raw=true)
