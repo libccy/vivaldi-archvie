@@ -11,6 +11,19 @@ If you are not sure where to put the code, paste them under this line
 <script src="bundle.js"></script>
 ````
 
+###Cycle tabs
+Cycle through tabs by right-click+mousewheel
+
+Recently used order:
+````html
+<script src="tweaks/cycle-tabs/main.js"></script>
+````
+Tab order:
+````html
+<script src="tweaks/cycle-tabs/main.js?order=1"></script>
+````
+![](/screenshots/cycle-tabs.png?raw=true)
+
 ###Popup tabs
 Show tabbar when hovering the icon on the sidebar and hide tabbar when mouse leaves it<br>
 (tabs position must be set to left).
@@ -30,19 +43,6 @@ By default, buttons on the addressbar are moved to the sidebar, hide them like t
 <script src="tweaks/addressbar/main.js?back=0;rewind=0;reload=0;home=0"></script>
 ````
 ![](/screenshots/addressbar.png?raw=true)
-
-###Cycle tabs
-Cycle through tabs by right-click+mousewheel
-
-Recently used order:
-````html
-<script src="tweaks/cycle-tabs/main.js"></script>
-````
-Tab order:
-````html
-<script src="tweaks/cycle-tabs/main.js?order=1"></script>
-````
-![](/screenshots/cycle-tabs.png?raw=true)
 
 ###White skin
 Modify the color of addressbar and panel.
