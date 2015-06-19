@@ -23,6 +23,18 @@
 
     browser.appendChild(container);
 
+    var order=0;
+    var scripts=document.body.querySelectorAll('script');
+    for(var i=0;i<scripts.length;i++){
+        var src=scripts[i].src;
+        if(src.indexOf('tweaks/cycle-tabs/main.js')!==-1){
+            if(scripts[i].src.indexOf('order=1')!==-1){
+                order=1;
+            }
+            break;
+        }
+    }
+
 
     var right=false;
     var current=null;
@@ -31,12 +43,29 @@
         current=null;
         container.classList.add('hidden');
     };
+    var recent=function(tab){
+        var page=document.querySelector('.webpageview webview[tab_id="'+tab.dataset.tabId+'"]');
+        if(page){
+            page=page.parentNode.parentNode.parentNode.parentNode;
+            return parseInt(page.style.zIndex);
+        }
+        return 0;
+    };
     var show=function(){
         var tabs=browser.querySelectorAll('#tabs>.tab');
         cycle.innerHTML='';
+        var list=[];
         for(var i=0;i<tabs.length;i++){
-            var node=tabs[i].cloneNode(true);
-            node._cycleLink=tabs[i];
+            list.push(tabs[i]);
+        }
+        if(!order){
+            list.sort(function(a,b){
+                return recent(b)-recent(a);
+            });
+        }
+        for(i=0;i<list.length;i++){
+            var node=list[i].cloneNode(true);
+            node._cycleLink=list[i];
             cycle.appendChild(node);
         }
         container.classList.remove('hidden');
@@ -99,7 +128,7 @@
                         }
                     }
                 }
-            
+
             e.preventDefault();
             e.stopPropagation();
         }
