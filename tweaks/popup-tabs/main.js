@@ -17,16 +17,17 @@
         var tabbar=document.querySelector('#tabs-container');
         var timeout=null;
 
-        // var addressbar=document.body.querySelector('.toolbar-addressbar');
-
         var show=function(){
+            if(!tabbar.parentElement){
+                tabbar=document.querySelector('#tabs-container');
+                tabbar.addEventListener('mouseleave',hide);
+            }
             tabbar.classList.add('tweak-show');
             tabbar.style.zIndex=1;
             tabbutton.classList.add('hoveractive');
             if(timeout){
                 clearTimeout(timeout);
             }
-            // addressbar.classList.add('tweak-show');
         };
         var hide=function(e){
             if(!e.toElement) return;

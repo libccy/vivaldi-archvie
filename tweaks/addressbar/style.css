@@ -70,16 +70,11 @@
 	}
 }
 
-#switch .button-toolbar{
-    -webkit-filter:invert(0.5);
-    max-width: none !important;
+#switch .button-toolbar.tabs{
+    -webkit-filter:invert(0.4);
 }
-#switch .button-toolbar:disabled{
-    -webkit-filter:invert(0.5) !important;
-}
-#switch .button-toolbar:hover,
 #switch .button-toolbar.tabs.hoveractive{
-    -webkit-filter:invert(0.7);
+    -webkit-filter:invert(0.6);
 }
 
 #addressbar-hover{
