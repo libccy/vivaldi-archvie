@@ -3,26 +3,13 @@
 ###Usage
 Copy the tweaks folder to the same directory as browser.html, then modify browser.html to enable a specific tweak.
 ````
-Windows: $installdir/Application/1.0.201.2/resources/vivaldi<br>
-Mac: $installdir/Contents/versions/1.0.201.2/Vivaldi Framework/resources/vivaldi
+Windows: $installdir/Application/1.0.209.3/resources/vivaldi<br>
+Mac: $installdir/Contents/versions/1.0.209.3/Vivaldi Framework/resources/vivaldi
 ````
 If you are not sure where to put the code, paste them under this line
 ````html
 <script src="bundle.js"></script>
 ````
-
-###Cycle tabs
-Cycle through tabs by right-click+mousewheel
-
-Recently used order:
-````html
-<script src="tweaks/cycle-tabs/main.js"></script>
-````
-Tab order:
-````html
-<script src="tweaks/cycle-tabs/main.js?order=1"></script>
-````
-![](/screenshots/cycle-tabs.png?raw=true)
 
 ###Popup tabs
 Show tabbar when hovering the icon on the sidebar and hide tabbar when mouse leaves it<br>
