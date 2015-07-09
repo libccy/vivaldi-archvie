@@ -3,4 +3,5 @@
 }
 #browser:not(.mac).native.address-top:not(.tabs-top) #header{
     top:calc(100% - 55px) !important;
+    position:absolute;
 }

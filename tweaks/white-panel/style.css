@@ -1,13 +1,3 @@
-.toolbar.toolbar-addressbar>.button-toolbar{
-    -webkit-filter:invert(0.5);
-}
-.toolbar.toolbar-addressbar{
-    background-image:linear-gradient(rgb(240,240,240),rgb(230,230,230));
-    border-bottom: 1px solid rgba(0,0,0,.15);
-}
-.addressfield,.searchfield{
-    box-shadow:rgba(0,0,0,0.1) 0 0 0 1px;
-}
 
 #switch{
     background-image: linear-gradient(to left,rgb(240,240,240),rgb(230,230,230));
